@@ -18,3 +18,31 @@ Indexes, Views
 Debugging API issues
 Understanding architecture
 Writing clean code
+🔥 ASP.NET Core (High Priority)
+What is Middleware? Explain pipeline
+Difference: .NET Framework vs .NET Core
+What is Dependency Injection?
+What is JWT Authentication?
+How do you handle exceptions globally?
+What is async/await?
+🔥 Angular (Very Important)
+What is Angular architecture?
+Difference: Template-driven vs Reactive forms
+What is Observable?
+What is HttpClient?
+Lifecycle hooks (ngOnInit, ngOnDestroy)
+How routing works?
+🔥 SQL
+Write a query with JOIN
+Stored procedure vs function
+Indexes
+View creation (they already asked you this!)
+🔥 Scenario-Based (VERY IMPORTANT)
+
+Infosys focuses heavily on real scenarios:
+
+👉 Example:
+
+API is slow → what will you check?
+Token not working → how to debug?
+UI not updating → what steps?
