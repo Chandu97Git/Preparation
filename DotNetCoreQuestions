@@ -1,1 +1,20 @@
-
+🔹 Backend (.NET Core)
+ASP.NET Core Web API
+Middleware, Filters
+Authentication (JWT)
+ADO.NET / Dapper / EF Core
+Exception handling, logging
+🔹 Frontend (Angular)
+Components, Services, Routing
+API integration
+Forms (Reactive forms)
+Observables (RxJS basics)
+Angular lifecycle hooks
+🔹 Database
+SQL Queries, Joins
+Stored Procedures
+Indexes, Views
+🔹 Real-time Skills
+Debugging API issues
+Understanding architecture
+Writing clean code
