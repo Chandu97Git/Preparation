@@ -1,1 +1,42 @@
-🔹 What is WebApplicationBuilder?
+🔹 What is WebApplicationBuilder and WebApplication?
+A) WebApplicationBuilder is used to configure services and settings, while WebApplication is the built application used to define middleware and handle HTTP requests.
+
+🔷 What is Middleware in ASP.NET Core?
+👉 Middleware is a component that handles HTTP requests and responses in the ASP.NET Core pipeline.
+Every request passes through a series of middleware components
+Each middleware can:
+Process the request
+Modify the response
+Pass control to the next middleware
+Or stop the pipeline
+
+🔷 Types of Middleware
+1. Built-in Middleware
+
+Common ones you should mention in interviews:
+UseRouting() → Matches URL to endpoint
+UseAuthentication() → Validates user identity
+UseAuthorization() → Checks permissions
+UseStaticFiles() → Serves images, CSS, JS
+UseExceptionHandler() → Handles global errors
+
+2. Custom Middleware
+
+👉 You can create your own middleware to handle logic like:
+
+Logging
+Exception handling
+Request validation
+Performance tracking
+🔷 Important Middleware Methods
+1. Use()
+Calls next middleware
+Most common
+🔹 2. Run()
+Terminal middleware (stops pipeline)
+🔹 3. Map()
+Branches pipeline based on URL
+
+🔷 What is Rate Limiting?
+👉
+Rate limiting restricts how many requests a client can send to an API within a specific time period.
