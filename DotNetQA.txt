@@ -40,3 +40,26 @@ Branches pipeline based on URL
 🔷 What is Rate Limiting?
 👉
 Rate limiting restricts how many requests a client can send to an API within a specific time period.
+
+🔷 1. What is Middleware?
+Middleware is a component that is part of the HTTP request pipeline and is responsible for handling requests and responses, either by processing them or passing them to the next middleware.
+
+🔷 2. Difference between Use, Run, Map
+Use continues the pipeline, Run terminates the pipeline, and Map branches the pipeline based on request path.
+
+🔷 3. What is Short-Circuiting?
+Short-circuiting means stopping the request pipeline early without passing control to the next middleware.
+
+🔷 4. Why Middleware Order Matters?
+Middleware order matters because each middleware depends on the previous one, and incorrect order can lead to failures like authentication or routing not working properly.
+
+🔷 5. Middleware vs Filters
+Middleware works at the application level for all requests, while filters work within the MVC pipeline and are applied at controller or action level.
+
+🔷 6. How to Create Custom Middleware?
+Custom middleware is created by defining a class with a constructor accepting RequestDelegate and an Invoke method, and then registering it using UseMiddleware.
+
+🔷 7. What is RequestDelegate?
+RequestDelegate is a function that represents the next middleware in the pipeline and is used to pass the HTTP request to the next component.
+
+
