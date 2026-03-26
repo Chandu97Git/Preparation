@@ -52,6 +52,18 @@ Short-circuiting means stopping the request pipeline early without passing contr
 
 🔷 4. Why Middleware Order Matters?
 Middleware order matters because each middleware depends on the previous one, and incorrect order can lead to failures like authentication or routing not working properly.
+🔷 Middleware Execution Order (Very Important)
+
+👉 Order matters a LOT
+
+Correct order example:
+
+app.UseExceptionHandler("/error");
+app.UseStaticFiles();
+app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapControllers();
 
 🔷 5. Middleware vs Filters
 Middleware works at the application level for all requests, while filters work within the MVC pipeline and are applied at controller or action level.
@@ -62,4 +74,38 @@ Custom middleware is created by defining a class with a constructor accepting Re
 🔷 7. What is RequestDelegate?
 RequestDelegate is a function that represents the next middleware in the pipeline and is used to pass the HTTP request to the next component.
 
+🔹 Q1: What is ASP.NET Core Web API?
+ASP.NET Core Web API is a framework used to build RESTful HTTP services that return data in JSON format. It is cross-platform, high-performance, and uses middleware-based architecture. In my project, I used it to connect Angular frontend with SQL Server using Dapper.
 
+🔹 Q2: Explain Request Lifecycle
+When a request comes, it first goes through middleware pipeline like routing, authentication, and authorization. Then it reaches the controller action method, processes business logic, fetches data from database, and returns response. The response then flows back through middleware in reverse order.
+
+🔹 Q4: How Routing Works?
+Routing maps incoming requests to specific controller actions. In Web API, we mainly use attribute routing like [HttpGet], [HttpPost], which gives better control over endpoints.
+🔷 How Routing Works (Internally)
+Request comes → /api/student/1
+Routing middleware matches URL
+Finds controller + action
+Executes that method
+
+🔷 What is Routing?
+👉
+Routing is the process of mapping an incoming HTTP request (URL) to a specific controller action method.
+
+🔹 Q5: What is Dependency Injection?
+👉
+Dependency Injection is a design pattern used to achieve loose coupling by injecting dependencies into a class instead of creating them inside the class.
+public class StudentController
+{
+    private StudentService _service = new StudentService(); // ❌ tightly coupled
+}
+
+public class StudentController
+{
+    private readonly IStudentService _service;
+
+    public StudentController(IStudentService service)
+    {
+        _service = service; // ✅ injected
+    }
+}
