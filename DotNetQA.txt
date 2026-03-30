@@ -95,6 +95,7 @@ Routing is the process of mapping an incoming HTTP request (URL) to a specific c
 🔹 Q5: What is Dependency Injection?
 👉
 Dependency Injection is a design pattern used to achieve loose coupling by injecting dependencies into a class instead of creating them inside the class.
+👉 Built-in DI container (no need for external libraries)
 public class StudentController
 {
     private StudentService _service = new StudentService(); // ❌ tightly coupled
@@ -109,3 +110,15 @@ public class StudentController
         _service = service; // ✅ injected
     }
 }
+🔷 Why DI is Important (Interview Points 💯)
+Improves testability
+Promotes loose coupling
+Supports clean architecture
+Easy to replace implementations
+Centralized configuration
+
+🔷 What are Service Lifetimes in ASP.NET Core?
+🔥 There are 3 types:
+Transient - [New instance every time it is requested] Transient services are created every time they are requested from the DI container.
+Scoped    - (One instance per HTTP request) Scoped services are created once per HTTP request and shared within that request.
+Singleton - (Single instance for entire application lifetime) Singleton services are created once and reused for all requests throughout the application lifetime.
