@@ -122,3 +122,60 @@ Centralized configuration
 Transient - [New instance every time it is requested] Transient services are created every time they are requested from the DI container.
 Scoped    - (One instance per HTTP request) Scoped services are created once per HTTP request and shared within that request.
 Singleton - (Single instance for entire application lifetime) Singleton services are created once and reused for all requests throughout the application lifetime.
+
+🔹 Q1: Which lifetime for DB operations?
+👉 Answer:
+Scoped, because each request should have its own instance.
+
+🔹 Q2: What happens if you use Singleton for DB?
+👉 Answer:
+It may cause concurrency issues and shared state problems.
+
+🔹 Q3: Can Transient depend on Scoped?
+👉 Answer:
+Yes, it is allowed.
+
+🔹 Q4: How to test lifetimes?
+👉 Answer:
+Use GUID property to check instance differences.
+
+🔹 Q1: What happens if await next() is not called?
+👉 Answer:
+The pipeline stops, and the request will not reach further middleware or controller (short-circuiting).
+
+🔹 Q2: Can we inject service into middleware?
+👉 Answer:
+Yes, but scoped services should be injected into the Invoke method, not constructor, to avoid lifetime issues.
+
+🔹 Q3: Why DI instead of new keyword?
+👉 Answer:
+DI improves loose coupling, testability, and allows easy replacement of implementations.
+
+🔹 Q4: Difference between MapControllers() and UseRouting()?
+👉 Answer:
+UseRouting() → identifies route
+MapControllers() → executes endpoint
+
+🔹 Q5: What happens if MapControllers() is missing?
+👉 Answer:
+Controller routes won’t work → API returns 404
+
+🔹 Q6: Can middleware return response without controller?
+👉 Answer:
+Yes, middleware can directly generate response and stop pipeline.
+
+🔹 Q7: Where is DI container created?
+👉 Answer: During builder.Build()
+
+🔹 Q8: What is tight coupling?
+👉 Answer: When classes directly depend on concrete implementations instead of abstractions.
+
+🔹 Q9: Why async/await in API?
+👉 Answer: To improve scalability and handle multiple requests efficiently without blocking threads.
+
+🔹 Q10: How do you handle large traffic?
+👉 Answer:
+Rate limiting
+Caching
+Load balancing
+Async APIs
