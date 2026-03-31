@@ -179,3 +179,6 @@ Rate limiting
 Caching
 Load balancing
 Async APIs
+
+🔹 Difference: .NET Framework vs .NET Core
+👉 Answer: .NET Framework is the older, Windows-only framework used for traditional applications, whereas .NET Core (now .NET 5/6/7/8) is a modern, cross-platform, high-performance framework designed for building scalable and cloud-ready applications. ASP.NET Core also introduces middleware, built-in dependency injection, and better performance compared to the traditional ASP.NET Framework.
