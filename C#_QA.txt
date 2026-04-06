@@ -1,0 +1,99 @@
+OOPS Concepts in C#
+-------------------
+🔷 Encapsulation: 
+Encapsulation means hiding the internal details of an object and exposing only what’s necessary.
+We can achieve this using access modifiers like private, public, protected, and internal, along with properties and methods.
+For Ex:
+-------
+using System;
+
+public class Student
+{
+    private int fee;
+
+    public void SetFee(int amount)
+    {
+        if (amount > 0)
+            fee = amount;
+    }
+
+    public int GetFee()
+    {
+        return fee;
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Student student = new Student();   // object creation
+
+        student.SetFee(5000);              // set value
+
+        int result = student.GetFee();     // get value
+
+        Console.WriteLine("Fee: " + result);
+    }
+}
+
+I have created a Student class with a private variable fee, which cannot be accessed directly from outside the class. This ensures data protection.
+To interact with this private data, I have provided two public methods:
+
+SetFee(int amount) → used to assign value
+GetFee() → used to retrieve value
+
+In the SetFee method, I added a validation condition to ensure that only positive values are assigned to the fee. This helps in maintaining data integrity.
+In the Main method, which is the entry point of the program, I created an object of the Student class. Then I called the SetFee method to assign a value and used the GetFee method to retrieve it. Finally, I printed the result using Console.WriteLine.
+This approach ensures controlled access to data and prevents invalid values from being assigned.
+
+🔷 Inheritance:
+Inheritance allows a class (child/derived) to inherit fields and methods from another class (parent/base), promoting code reuse and hierarchical relationships.
+
+using System;
+public class Person
+{
+    public string Name;
+
+    public void DisplayName()
+    {
+        Console.WriteLine("Name: " + Name);
+    }
+}
+
+public class Student : Person   // Inheritance
+{
+    public int Fee;
+
+    public void DisplayFee()
+    {
+        Console.WriteLine("Fee: " + Fee);
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Student student = new Student();
+
+        student.Name = "Chandu";   // inherited
+        student.Fee = 5000;
+
+        student.DisplayName();     // parent method
+        student.DisplayFee();      // child method
+    }
+}
+Inheritance is a concept where a child class inherits properties and methods from a parent class. In this example, Student is the child class and Person is the parent class.
+The Student class inherits the Name property and DisplayName() method from the Person class using the : symbol. It also has its own property Fee and method DisplayFee().
+In the Main method, I created an object of the Student class and accessed both inherited and its own members. This demonstrates how inheritance helps in reusing code and reducing duplication.
+
+Types of Inheritance:
+Single Inheritance : One derived class inherits from one base class  
+Multilevel Inheritance : A derived class inherits from another derived class
+Hierarchical Inheritance : Multiple derived classes inherit from a single base class
+Multiple Inheritance : One class inherits from multiple base classes
+Hybrid Inheritance : Combination of two or more inheritance types
+
+
+
