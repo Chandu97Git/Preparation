@@ -95,5 +95,33 @@ Hierarchical Inheritance : Multiple derived classes inherit from a single base c
 Multiple Inheritance : One class inherits from multiple base classes
 Hybrid Inheritance : Combination of two or more inheritance types
 
+🔷 Polymorphism:
+Polymorphism means one method can have multiple forms. It is of two types: compile-time and runtime polymorphism. Compile-time polymorphism is achieved using method overloading, where the same method name has different parameters. Runtime polymorphism is achieved using method overriding, where a child class provides a different implementation of a parent class method using virtual and override keywords.
+using System;
 
+public class Animal
+{
+    public virtual void Sound()
+    {
+        Console.WriteLine("Animal makes sound");
+    }
+}
 
+public class Dog : Animal
+{
+    public override void Sound()
+    {
+        Console.WriteLine("Dog barks");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Animal obj = new Dog();  // parent reference, child object
+        obj.Sound();
+    }
+}
+🔷 Abstraction
+Abstraction is used to hide implementation details and expose only necessary functionality. It can be achieved using abstract classes and interfaces. In an abstract class, we can have both abstract and non-abstract methods, whereas interfaces contain only method declarations. This helps in reducing complexity and improving code maintainability.
