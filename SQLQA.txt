@@ -105,3 +105,29 @@ CREATE TABLE Employees (
 
 ✅ What is Data Integrity?
 “Data integrity ensures that data in the database is accurate, consistent, and reliable, and it is maintained using constraints like primary key and foreign key.”
+
+✅ What is a Unique Key?
+“A Unique Key ensures that all values in a column are unique. Unlike a primary key, it can allow NULL values and a table can have multiple unique keys.”
+CREATE TABLE Employees (
+    id INT PRIMARY KEY,
+    email VARCHAR(100) UNIQUE
+);
+🔹 Key Characteristics
+✔ No duplicate values
+✔ Can allow NULL (usually one NULL in SQL Server)
+✔ A table can have multiple Unique Keys
+✔ Used for fields like:
+Email
+Phone number
+Aadhaar / PAN
+Aadhaar / PAN
+
+✅ What is a JOIN in SQL?
+“A JOIN is used to combine data from multiple tables based on a related column, usually a primary key and foreign key relationship.”
+SELECT e.name, d.dept_name
+FROM Employees e
+INNER JOIN Departments d 
+ON e.dept_id = d.id;
+
+🔥 Types of JOINs
+🔹 1. INNER JOIN
