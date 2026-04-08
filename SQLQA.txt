@@ -79,3 +79,29 @@ CREATE TABLE StudentCourses (
 🔹 2. Composite Primary Key (Important 🔥)
 A primary key can be a single column or a combination of columns (composite key). Composite keys are used when one column is not sufficient to uniquely identify a record.
 👉 When one column is NOT enough, we combine multiple columns to uniquely identify a record.
+
+✅ What is a Foreign Key?
+“A foreign key is a column in one table that references the primary key of another table and is used to maintain relationships and data integrity.”
+| id | dept_name |
+| -- | --------- |
+| 10 | HR        |
+| 20 | IT        |
+| id | name   | dept_id |
+| -- | ------ | ------- |
+| 1  | Chandu | 10      |
+| 2  | Ravi   | 20      |
+
+CREATE TABLE Employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    dept_id INT,
+    FOREIGN KEY (dept_id) REFERENCES Departments(id)
+);
+🔹 Why Foreign Key is Important?
+
+✔ Maintains data integrity
+✔ Prevents invalid data (e.g., dept_id that doesn't exist)
+✔ Creates relationships between tables
+
+✅ What is Data Integrity?
+“Data integrity ensures that data in the database is accurate, consistent, and reliable, and it is maintained using constraints like primary key and foreign key.”
