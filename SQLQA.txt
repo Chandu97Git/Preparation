@@ -179,3 +179,22 @@ SELECT e.name AS Employee, m.name AS Manager
 FROM Employees e
 LEFT JOIN Employees m 
 ON e.manager_id = m.id;
+
+✅ What is a CROSS JOIN?
+A CROSS JOIN returns the Cartesian product of two tables.A CROSS JOIN returns all possible combinations of rows between two tables.
+SELECT e.name, d.dept_name
+FROM Employees e
+CROSS JOIN Departments d;
+
+✅ Difference Between WHERE and HAVING
+WHERE filters rows before grouping, while HAVING filters grouped data after applying aggregate functions.
+🔹 WHERE Example
+SELECT * 
+FROM Employees
+WHERE salary > 50000;
+
+🔹 HAVING Example
+SELECT dept_id, SUM(salary)
+FROM Employees
+GROUP BY dept_id
+HAVING SUM(salary) > 100000;
