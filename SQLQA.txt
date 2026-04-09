@@ -130,4 +130,52 @@ INNER JOIN Departments d
 ON e.dept_id = d.id;
 
 🔥 Types of JOINs
-🔹 1. INNER JOIN
+🔹 1. INNER JOIN 👉 Returns only matching records
+✔ Common data only
+
+SELECT e.name, d.dept_name
+FROM Employees e
+INNER JOIN Departments d 
+ON e.dept_id = d.id;
+
+🔹 2. LEFT JOIN (LEFT OUTER JOIN)
+👉 Returns:
+All records from left table
+Matching from right
+Non-matching → NULL
+
+SELECT e.name, d.dept_name
+FROM Employees e
+LEFT JOIN Departments d 
+ON e.dept_id = d.id;
+
+🔹 3. RIGHT JOIN
+👉 RIGHT JOIN returns:
+All records from the right table
+Matching records from the left table
+Non-matching from left → NULL
+
+SELECT e.name, d.dept_name
+FROM Employees e
+RIGHT JOIN Departments d
+ON e.dept_id = d.id;
+
+🔹 4. FULL JOIN
+👉 Returns:
+All records from both tables
+Non-matching → NULL
+👉 Question:
+Get all employees and departments, including unmatched records.
+
+SELECT e.name, d.dept_name
+FROM Employees e
+FULL JOIN Departments d 
+ON e.dept_id = d.id;
+
+🔹 7. Self JOIN (Tricky 🔥)
+👉 Question:
+Find employees and their managers.
+SELECT e.name AS Employee, m.name AS Manager
+FROM Employees e
+LEFT JOIN Employees m 
+ON e.manager_id = m.id;
