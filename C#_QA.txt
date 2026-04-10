@@ -36,7 +36,6 @@ class Program
         Console.WriteLine("Fee: " + result);
     }
 }
-
 I have created a Student class with a private variable fee, which cannot be accessed directly from outside the class. This ensures data protection.
 To interact with this private data, I have provided two public methods:
 
@@ -92,7 +91,7 @@ Types of Inheritance:
 Single Inheritance : One derived class inherits from one base class  
 Multilevel Inheritance : A derived class inherits from another derived class
 Hierarchical Inheritance : Multiple derived classes inherit from a single base class
-Multiple Inheritance : One class inherits from multiple base classes
+Multiple Inheritance : One class inherits from multiple base classes. C# does NOT support multiple inheritance with classes, But you can achieve it using interfaces
 Hybrid Inheritance : Combination of two or more inheritance types
 
 🔷 Polymorphism:
