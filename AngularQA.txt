@@ -68,3 +68,27 @@ export class UserComponent {
     this.logger.log('User logged in');
   }
 }
+
+❓ Explain Lifecycle Hooks
+✅ Answer: Lifecycle hooks are methods that allow us to tap into different stages of a component's lifecycle.
+
+Hook,                  Timing,                                                                 Common Use Case
+ngOnChanges(),     Called before ngOnInit and whenever an @Input() property changes.,      Reacting to data passed in from a parent component.
+ngOnInit(),        Called once after the first ngOnChanges.,                               "Initializing logic, fetching data from an API, or setting up variables."
+ngDoCheck(),       Called during every change detection run.,                              Custom change detection logic that Angular can't catch automatically.
+ngAfterViewInit(), Called after the component's views and child views are initialized.,    Accessing DOM elements via @ViewChild.
+ngOnDestroy(),     Called just before Angular destroys the component.,                     Cleanup: unsubscribing from Observables or detaching event listeners to avoid memory leaks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
