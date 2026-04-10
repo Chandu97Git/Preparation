@@ -163,6 +163,7 @@ class Program
 Abstraction is used to hide implementation details and expose only necessary functionality. It can be achieved using abstract classes and interfaces. In an abstract class, we can have both abstract and non-abstract methods, whereas interfaces contain only method declarations. This helps in reducing complexity and improving code maintainability.
 using System;
 🔥 Example Using Abstract Class
+
 public abstract class Vehicle
 {
     public abstract void Start(); // no implementation
