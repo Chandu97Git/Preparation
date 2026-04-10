@@ -1,0 +1,40 @@
+❓ Question: What is a Component?
+✅ Answer (Deloitte-level)
+
+A component is the fundamental building block of Angular UI, responsible for controlling a portion of the screen.
+
+1. The Three Core Parts of a Component
+A component is defined by a TypeScript class with a @Component decorator. It consists of three essential files:
+
+The Template (HTML): Defines the structure and layout of the UI.
+
+The Styles (CSS/SCSS): Defines how the component looks. These styles are "encapsulated," meaning they won't leak out and affect other parts of your app.
+
+The Logic (TypeScript): A class that contains the data (properties) and behavior (methods) of the component.
+
+👉 Angular follows a component-based architecture, where the UI is broken into reusable pieces.
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-greet',           // The custom HTML tag used to call this component
+  templateUrl: './greet.html',     // Path to the HTML file
+  styleUrls: ['./greet.css']       // Path to the CSS file
+})
+export class GreetComponent {
+  userName: string = 'Alex';       // Data property
+
+  sayHello() {                     // Method (Behavior)
+    alert(`Hello, ${this.userName}!`);
+  }
+}
+Why use Components?
+Using a component-based architecture provides several major benefits:
+
+Reusability: You can create a "Button" or "UserCard" component once and use it dozens of times throughout your app.
+
+Maintainability: Because the logic and styles are scoped to a single component, it is easier to debug and update without breaking the rest of the site.
+
+Readability: Instead of one massive HTML file, your code is broken into small, descriptive tags like <app-navbar> or <app-footer>.
+
+Unit Testing: Since components are isolated units, you can write tests for them individually to ensure they behave correctly.
