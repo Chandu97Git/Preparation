@@ -38,3 +38,33 @@ Maintainability: Because the logic and styles are scoped to a single component, 
 Readability: Instead of one massive HTML file, your code is broken into small, descriptive tags like <app-navbar> or <app-footer>.
 
 Unit Testing: Since components are isolated units, you can write tests for them individually to ensure they behave correctly.
+
+❓ What is Dependency Injection?
+✅ Answer:  Dependency Injection (DI) is a design pattern where Angular provides required dependencies (services) instead of creating them manually.
+👉 Angular has a built-in DI container
+Improves:
+
+Reusability
+Testability
+Loose coupling
+
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root' // This makes the service available everywhere
+})
+export class LoggerService {
+  log(message: string) {
+    console.log(`Log: ${message}`);
+  }
+}
+
+@Component({ ... })
+export class UserComponent {
+  // Angular automatically "injects" the logger here
+  constructor(private logger: LoggerService) {}
+
+  login() {
+    this.logger.log('User logged in');
+  }
+}
