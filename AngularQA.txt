@@ -79,10 +79,36 @@ ngDoCheck(),       Called during every change detection run.,                   
 ngAfterViewInit(), Called after the component's views and child views are initialized.,    Accessing DOM elements via @ViewChild.
 ngOnDestroy(),     Called just before Angular destroys the component.,                     Cleanup: unsubscribing from Observables or detaching event listeners to avoid memory leaks.
 
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
+@Component({
+  selector: 'app-timer',
+  template: `<p>Check the console!</p>`
+})
+export class TimerComponent implements OnInit, OnDestroy {
 
+  constructor() {
+    console.log('1. Constructor: Class is instantiated.');
+  }
 
+  ngOnInit() {
+    console.log('2. ngOnInit: Component is initialized and data-bound properties are ready.');
+    // Perfect place for API calls
+  }
 
+  ngOnDestroy() {
+    console.log('3. ngOnDestroy: Cleaning up before the component disappears.');
+    // Stop timers or unsubscribe here
+  }
+}
+
+❓ When will ngOnChanges NOT trigger?
+👉 When input properties don’t change OR internal variables change.
+ngOnInit → API calls
+ngOnDestroy → unsubscribe observables (avoid memory leaks)
+
+🎯 ❓ Why do we use subscribe() in Angular?
+We use subscribe() in Angular to execute Observables and receive data. Since Observables are lazy, they don’t run until subscribed. In HTTP calls, subscribe() triggers the API request and allows us to handle response, errors, and completion. However, we should manage subscriptions carefully to avoid memory leaks, or use async pipe for automatic handling.
 
 
 
