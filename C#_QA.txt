@@ -249,3 +249,8 @@ using (var con = new SqlConnection(connectionString))
     con.Open();
     // do database work
 } // connection disposed automatically
+
+🔷 Collections, Generics and List
+Collections are used to store multiple objects. Generics provide type safety, and List<T> is a commonly used generic collection for dynamic data storage.
+
+
