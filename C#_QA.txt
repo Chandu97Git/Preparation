@@ -98,6 +98,43 @@ Hybrid Inheritance : Combination of two or more inheritance types
 Polymorphism means one method can have multiple forms. It is of two types: compile-time and runtime polymorphism. Compile-time polymorphism is achieved using method overloading, where the same method name has different parameters. Runtime polymorphism is achieved using method overriding, where a child class provides a different implementation of a parent class method using virtual and override keywords.
 using System;
 
+Method Overload
+using System;
+
+class Calculator
+{
+    // Method 1
+    public int Add(int a, int b)
+    {
+        return a + b;
+    }
+
+    // Method 2 (different number of parameters)
+    public int Add(int a, int b, int c)
+    {
+        return a + b + c;
+    }
+
+    // Method 3 (different type)
+    public double Add(double a, double b)
+    {
+        return a + b;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Calculator obj = new Calculator();
+
+        Console.WriteLine(obj.Add(2, 3));        // 5
+        Console.WriteLine(obj.Add(2, 3, 4));     // 9
+        Console.WriteLine(obj.Add(2.5, 3.5));    // 6.0
+    }
+}
+
+Method Override
 public class Animal
 {
     public virtual void Sound()
