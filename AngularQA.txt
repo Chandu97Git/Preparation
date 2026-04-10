@@ -113,8 +113,8 @@ this.http.get('api/users').subscribe(data => {
   console.log(data);
 });
 
-
-
+🎯 ❓ Observables vs Promise
+Promises and Observables are both used for async operations. Promises handle a single value and execute immediately, whereas Observables are lazy, support multiple values over time, and can be cancelled. Angular uses Observables extensively because they provide powerful operators like switchMap and debounceTime, which help in handling complex async scenarios efficiently.
 
 
 
