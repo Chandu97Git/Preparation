@@ -198,3 +198,5 @@ SELECT dept_id, SUM(salary)
 FROM Employees
 GROUP BY dept_id
 HAVING SUM(salary) > 100000;
+
+
