@@ -109,7 +109,9 @@ ngOnDestroy → unsubscribe observables (avoid memory leaks)
 
 🎯 ❓ Why do we use subscribe() in Angular?
 We use subscribe() in Angular to execute Observables and receive data. Since Observables are lazy, they don’t run until subscribed. In HTTP calls, subscribe() triggers the API request and allows us to handle response, errors, and completion. However, we should manage subscriptions carefully to avoid memory leaks, or use async pipe for automatic handling.
-
+this.http.get('api/users').subscribe(data => {
+  console.log(data);
+});
 
 
 
