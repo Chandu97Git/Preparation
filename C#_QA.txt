@@ -47,6 +47,153 @@ void ShowMessage()
 ✔️ Usage:
 ShowMessage();
 
+🔹 1. Method Syntax (Clean Version)
+[modifiers] return_type MethodName(parameters)
+{
+    // logic
+}
+🔹 Breakdown of Each Part
+✅ 1. Modifiers (Optional)
+
+These control access and behavior of the method.
+
+Common ones:
+
+public → accessible everywhere
+private → inside class only
+protected, internal
+static → belongs to class (no object needed)
+virtual, override, abstract → used in inheritance
+
+👉 Example:
+
+public static void MyMethod()
+✅ 2. Return Type (void or type)
+void → no return value
+int, string, etc. → returns value
+
+👉 Examples:
+
+void Show()          // no return
+int Add()           // returns integer
+string GetName()    // returns string
+
+✔️ Important:
+Return type can also be user-defined (class)
+
+✅ 3. Method Name
+
+👉 Just an identifier (name of method)
+
+CalculateSalary()
+PrintData()
+GetUserDetails()
+✅ 4. Parameters (Optional)
+
+Used to pass data into method.
+
+int Add(int a, int b)
+🔹 Parameter Syntax (Advanced)
+[ref|out] [params] type variable [= defaultValue]
+✔️ Types:
+ref → pass by reference (must initialize before passing)
+out → pass by reference (no need to initialize)
+params → multiple values (array)
+
+👉 Example:
+
+void Test(ref int a, out int b, params int[] numbers)
+🔹 Example (All Combined)
+public static int Add(int a, int b)
+{
+    return a + b;
+}
+🔹 2. Types of Methods
+1️⃣ Non-Value Returning
+public static void Print()
+{
+    Console.WriteLine("Hello");
+}
+2️⃣ Value Returning
+public static string GetName()
+{
+    return "Chandu";
+}
+🔹 3. Where to Define Methods?
+
+👉 Always inside a class
+
+class Program
+{
+    void MyMethod() { }
+}
+
+✔️ This follows Encapsulation (OOP principle)
+
+🔹 4. How Methods Execute?
+
+👉 Methods do NOT run automatically
+
+❗ Except:
+
+Main() → automatically executed by runtime
+
+🔹 5. How to Call Methods
+
+🔸 1. Non-Static Method
+
+👉 Need object (instance)
+
+class Test
+{
+    public void Show()
+    {
+        Console.WriteLine("Hello");
+    }
+}
+
+Calling:
+
+Test obj = new Test();
+obj.Show();
+
+🔸 2. Static Method
+
+👉 No object needed
+👉 Call using Class Name
+
+class Test
+{
+    public static void Show()
+    {
+        Console.WriteLine("Hello");
+    }
+}
+
+Calling:
+
+Test.Show();
+🔹 Real Example (Important 🔥)
+
+From Console class C#:
+
+Console.WriteLine("Hello");
+string name = Console.ReadLine();
+
+✔️ Why no object?
+👉 Because these methods are static
+
+🔹 6. Key Concepts (Interview Gold ⚡)
+Methods are defined inside classes
+Methods are executed only when called
+Two types:
+Static → class level
+Non-static → object level
+Return type defines:
+void → no return
+type → returns value
+
+
 
 OOPS Concepts in C#
 -------------------
