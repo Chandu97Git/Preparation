@@ -21,8 +21,31 @@ Class → Car (blueprint)
 Properties → Color, Model, Speed
 Methods → Start(), Stop(), Drive()
 
+🔹 What is a Method?
+👉 "A method is a named block of code that performs a task. It can either return a value (function) or not return anything (void method)."
 
+🔹 Types of Methods
 
+1️⃣ Value Returning Method (Function)
+👉 These methods return a value
+
+int Add(int a, int b)
+{
+    return a + b;
+}
+✔️ Usage:
+int result = Add(5, 3);
+Console.WriteLine(result); // 8
+
+2️⃣ Non-Value Returning Method (Subroutine)
+👉 These methods do not return anything
+👉 They use void
+void ShowMessage()
+{
+    Console.WriteLine("Hello Chandu");
+}
+✔️ Usage:
+ShowMessage();
 
 
 OOPS Concepts in C#
