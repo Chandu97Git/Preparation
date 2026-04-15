@@ -1,3 +1,30 @@
+🔹 Class:
+-------------
+👉 "A class in C# is a blueprint used to create objects. It contains properties and methods that define the data and behavior of an object."
+
+🔹 Simple Definition
+A class is a user-defined data type that groups:
+Variables (fields / properties)
+Methods (functions)
+🔹 Key Points (Interview Important)
+Class is a reference type
+It does not occupy memory until object is created
+Supports OOP concepts:
+Encapsulation
+Inheritance
+Polymorphism
+Abstraction
+
+🔹 Real-Time Example
+Think of a Car 🚗
+Class → Car (blueprint)
+Properties → Color, Model, Speed
+Methods → Start(), Stop(), Drive()
+
+
+
+
+
 OOPS Concepts in C#
 -------------------
 🔷 Encapsulation: 
