@@ -314,10 +314,55 @@ Program → class (type)
 p → reference variable (stored in stack)
 new Program() → object (stored in heap)
 
+🔹 Consuming a class from other classes?
+A class can be consumed in another class mainly in two ways: by creating an instance (object) to access its members, and by using inheritance where a derived class can directly access base class members. Additionally, static members can be accessed directly using the class name.
 
+🔹 1. What are Parameters?
+Parameters in C# are used to pass values to methods. They are of three types: input parameters (default), output parameters using out, and input-output parameters using ref. Additionally, params allows multiple values, and default parameters make arguments optional
+🔹 3. Types of Parameters
+1️⃣ Input Parameters (Default)
 
+👉 These send values into method
 
+void Test(int a)
+{
+    Console.WriteLine(a);
+}
 
+✔️ By default → all parameters are input
+
+2️⃣ Output Parameters (out)
+
+👉 Used to return values from method
+
+void Math(int a, int b, out int sum)
+{
+    sum = a + b;
+}
+
+Calling:
+
+int result;
+Math(5, 3, out result);
+
+✔️ Must assign value inside method
+✔️ Used for multiple outputs
+
+3️⃣ InOut Parameters (ref)
+
+👉 Used to send value + modify same variable
+
+void Square(ref int x)
+{
+    x = x * x;
+}
+
+Calling:
+
+int a = 5;
+Square(ref a);
+
+✔️ Input + Output in same variable
 
 
 
