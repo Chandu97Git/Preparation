@@ -392,12 +392,83 @@ class Program
     }
 }
 
+🔹 5. Tuple (C# 7 Feature)
+👉 Used to return multiple values without out
+public (int, int) Math2(int a, int b)
+{
+    return (a + b, a * b);
+}
 
+Calling:
 
+var (sum, product) = Math2(10, 5);
 
+✔️ Cleaner than out
 
+🔹 6. params Keyword
 
+👉 Allows passing multiple values without array
 
+void Add(params int[] numbers)
+{
+    foreach (var n in numbers)
+        Console.WriteLine(n);
+}
+
+Calling:
+
+Add(1, 2, 3, 4);
+
+✔️ No need to create array manually
+
+🔹 What is params again?
+👉 params allows you to pass multiple values to a method without creating an array manually
+The params keyword allows passing multiple values as an array. Only one params parameter is allowed in a method, and it must be the last parameter because it collects all remaining arguments.
+void Test(params int[] a)
+{
+}
+✔️ Only one params parameter is allowed in a method
+
+🔹 Why only one?
+👉 Because params already collects all remaining values
+👉 If two params exist → compiler gets confused:
+
+🔹 1. Variable, Instance, and Reference of a Class
+"A variable holds a reference, an instance is the actual object in heap memory, and a reference is another variable pointing to the same object. Multiple references can point to the same instance, sharing the same memory."
+1️⃣ Variable of a Class
+A variable of a class is just a placeholder, not initialized, no memory allocated yet.
+You cannot access members through it until it’s assigned an object.
+First f; // f is a variable of class First
+// Console.WriteLine(f.x); // ❌ Invalid, not initialized
+2️⃣ Instance of a Class
+An instance is created using the new keyword.
+Memory is allocated in heap for its members.
+Through this instance, we can access class members.
+First f = new First(); // Instance creation
+Console.WriteLine(f.x); // ✅ Valid
+Multiple instances: each has its own memory.
+First f1 = new First();
+First f2 = new First();
+f1.x = 200;
+f2.x = 300;
+Console.WriteLine(f1.x); // 200
+Console.WriteLine(f2.x); // 300
+3️⃣ Reference of a Class
+A reference points to an existing instance.
+It does not create new memory — it uses the same memory as the instance.
+First f1 = new First(); // Instance
+First f2 = f1;          // Reference to f1
+f2.x = 300;
+Console.WriteLine(f1.x); // 300 (same memory)
+Changing f1 or f2 affects the same object.
+Assigning null to one reference does not affect the other.
+f1 = null;
+Console.WriteLine(f2.x); // ✅ Still works
+// Console.WriteLine(f1.x); // ❌ Runtime error
+🔹 4. De-referencing an Instance
+Assign null to an instance → you lose access to that object through this variable.
+Memory is not immediately freed → Garbage Collector will clean it up later.
+f = null; // marks object as unused
 
 
 
