@@ -363,7 +363,34 @@ int a = 5;
 Square(ref a);
 
 ✔️ Input + Output in same variable
+1️⃣ Difference: ref vs out
+ref → Pass variable by reference, must be initialized before passing.
+out → Pass variable by reference, no need to initialize before passing, but must assign in method.
+using System;
 
+class Program
+{
+    static void RefExample(ref int a)
+    {
+        a += 10;
+    }
+
+    static void OutExample(out int b)
+    {
+        b = 20; // Must assign
+    }
+
+    static void Main()
+    {
+        int x = 5;
+        RefExample(ref x);
+        Console.WriteLine("Ref: " + x); // 15
+
+        int y;
+        OutExample(out y);
+        Console.WriteLine("Out: " + y); // 20
+    }
+}
 
 
 
@@ -583,34 +610,7 @@ class CardPayment : IPayment
     }
 }
 
-1️⃣ Difference: ref vs out
-ref → Pass variable by reference, must be initialized before passing.
-out → Pass variable by reference, no need to initialize before passing, but must assign in method.
-using System;
 
-class Program
-{
-    static void RefExample(ref int a)
-    {
-        a += 10;
-    }
-
-    static void OutExample(out int b)
-    {
-        b = 20; // Must assign
-    }
-
-    static void Main()
-    {
-        int x = 5;
-        RefExample(ref x);
-        Console.WriteLine("Ref: " + x); // 15
-
-        int y;
-        OutExample(out y);
-        Console.WriteLine("Out: " + y); // 20
-    }
-}
 
 2️⃣ Difference: var vs dynamic
 var → Compiler determines type at compile-time, strongly typed. If the variable does not initialized it throw an error.
