@@ -485,6 +485,9 @@ Test t = new Test(); // Constructor runs automatically
 
 
 
+
+
+
 OOPS Concepts in C#
 -------------------
 🔷 Encapsulation: 
