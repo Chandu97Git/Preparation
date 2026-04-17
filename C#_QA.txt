@@ -471,7 +471,14 @@ Memory is not immediately freed → Garbage Collector will clean it up later.
 f = null; // marks object as unused
 
 🔹 1. What is a Constructor?
-A constructor in C# is a special method used to initialize object data. It has the same name as the class and is automatically invoked when an object is created using the new keyword. Constructors can be default or parameterized.
+A constructor in C# is a special method of a class that is automatically called when an object of the class is created.It has the same name as the class, does not have a return type and is mainly used to initialize the object's data members. Constructors can be default or parameterized.
+✔️ It is automatically called when object is created
+
+🔹 Key Properties
+Same name as class
+No return type (not even void)
+Called automatically when using new
+
 🔹 Example
 class Test
 {
