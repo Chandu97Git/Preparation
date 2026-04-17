@@ -471,7 +471,14 @@ Memory is not immediately freed → Garbage Collector will clean it up later.
 f = null; // marks object as unused
 
 🔹 1. What is a Constructor?
-A constructor in C# is a special method of a class that is automatically called when an object of the class is created.It has the same name as the class, does not have a return type and is mainly used to initialize the object's data members. Constructors can be default or parameterized.
+
+A constructor in C# is a special method of a class that is automatically called when an object of the class is created. It has the same name as the class, does not have a return type and is mainly used to initialize the object's data members.
+
+A class can define multiple constructors (constructor overloading).
+A constructor cannot be virtual or abstract. Only a special kind of constructor can be static.
+------------------------------or------------------------------------------------------------
+"A constructor in C# is a special method used to initialize object data. It has the same name as the class and is automatically invoked when an object is created using the new keyword. Constructors can be default or parameterized."
+
 ✔️ It is automatically called when object is created
 
 🔹 Key Properties
@@ -489,9 +496,43 @@ class Test
 }
 Test t = new Test(); // Constructor runs automatically
 
+Types of Constructor
+---------------------
+Default Constructor
+Parameterized Constructor
+Copy Constructor
+Private Constructor
+Static Constructor
 
+🔸 1. Default Constructor
+A default constructor in C# is a constructor with no parameters. It is automatically provided by the compiler if no constructor is defined in the class. It initializes numeric fields to 0, Boolean to false and reference types like strings or objects to null. 
+Example:
+using System;
 
+class Geeks {
+    // Fields without manual initialization
+    int num;        // default: 0
+    string name;    // default: null
+    bool flag;      // default: false
 
+    // Default constructor
+    public Geeks() {
+        Console.WriteLine("Constructor Called");
+    }
+
+    public static void Main() {
+        // Invoke default constructor
+        Geeks geek1 = new Geeks();
+
+        // Display default values of fields
+        Console.WriteLine("num = " + geek1.num);
+        Console.WriteLine("name = " + geek1.name);
+        Console.WriteLine("flag = " + geek1.flag);
+    }
+}
+
+🔸 2. Parameterized Constructor
+A constructor having at least one parameter is called a parameterized constructor. It can initialize each instance of the class to different values.
 
 
 
