@@ -534,6 +534,106 @@ class Geeks {
 🔸 2. Parameterized Constructor
 A constructor having at least one parameter is called a parameterized constructor. It can initialize each instance of the class to different values.
 
+using System;
+
+namespace KeywordExample
+{
+    class Student
+    {
+        private string name;
+        private int age;
+
+        // Parameter names match the field names exactly
+        public Student(string name, int age)
+        {
+            // "this.name" refers to the private string name above
+            // "name" refers to the parameter passed into this constructor
+            this.name = name;
+            this.age = age;
+        }
+
+        public void Introduce()
+        {
+            Console.WriteLine($"Hello, my name is {this.name} and I am {this.age} years old.");
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            Student s1 = new Student("Alice", 21);
+            s1.Introduce();
+        }
+    }
+}
+
+3. Copy Constructor
+A copy constructor is used to create a new object by copying values from an existing object of the same class. In C#, copy constructors are not built-in and must be explicitly defined by the user.
+
+using System;
+
+class Geeks 
+{
+    private string month;
+    private int year;
+
+    // declaring Copy constructor
+    public Geeks(Geeks s)
+    {
+        month = s.month;
+        year = s.year;
+    }
+
+    // Instance constructor
+    public Geeks(string month, int year){
+        this.month = month;
+        this.year = year;
+    }
+
+    // Get details of Geeks
+    public string Details{
+        get
+        {
+            return "Month: " + month.ToString() + "\nYear: " + year.ToString();
+        }
+    }
+    
+    public static void Main(){
+        // Create a new Geeks object.
+        Geeks g1 = new Geeks("June", 2018);
+
+        // here is g1 details is copied to g2.
+        Geeks g2 = new Geeks(g1);
+
+        Console.WriteLine(g2.Details);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 OOPS Concepts in C#
