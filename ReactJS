@@ -1,1 +1,24 @@
+For creating new react app we need
+---------------------------------
+node js, vs code, 
+npx create-react-app proname 
+npm start -- to start app
 
+Component:
+----------
+⚙️ Types of Components
+🔹 1. Stateles Functional Component (Modern ✅)
+function Button() {
+  return <button>Click Me</button>;
+}
+
+👉 You are using this already 👍
+
+🔹 2.Stateful Class Component (Old ❌)
+class Button extends React.Component {
+  render() {
+    return <button>Click Me</button>;
+  }
+}
+
+👉 Not used much now
