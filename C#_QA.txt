@@ -568,7 +568,7 @@ namespace KeywordExample
     }
 }
 
-3. Copy Constructor
+🔹 3. Copy Constructor
 A copy constructor is used to create a new object by copying values from an existing object of the same class. In C#, copy constructors are not built-in and must be explicitly defined by the user.
 
 using System;
@@ -659,7 +659,8 @@ namespace CopyConstructorExample
     }
 }
 
-
+🔹 4.Private Constructor
+A private constructor is used to restrict object creation from outside the class. It is commonly used in the Singleton pattern to ensure that only one instance of a class exists. Access to that instance is provided through a public static method or property
 
 
 
