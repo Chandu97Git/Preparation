@@ -435,11 +435,13 @@ void Test(params int[] a)
 
 🔹 1. Variable, Instance, and Reference of a Class
 "A variable holds a reference, an instance is the actual object in heap memory, and a reference is another variable pointing to the same object. Multiple references can point to the same instance, sharing the same memory."
+
 1️⃣ Variable of a Class
 A variable of a class is just a placeholder, not initialized, no memory allocated yet.
 You cannot access members through it until it’s assigned an object.
 First f; // f is a variable of class First
 // Console.WriteLine(f.x); // ❌ Invalid, not initialized
+
 2️⃣ Instance of a Class
 An instance is created using the new keyword.
 Memory is allocated in heap for its members.
@@ -453,6 +455,7 @@ f1.x = 200;
 f2.x = 300;
 Console.WriteLine(f1.x); // 200
 Console.WriteLine(f2.x); // 300
+
 3️⃣ Reference of a Class
 A reference points to an existing instance.
 It does not create new memory — it uses the same memory as the instance.
@@ -465,6 +468,7 @@ Assigning null to one reference does not affect the other.
 f1 = null;
 Console.WriteLine(f2.x); // ✅ Still works
 // Console.WriteLine(f1.x); // ❌ Runtime error
+
 🔹 4. De-referencing an Instance
 Assign null to an instance → you lose access to that object through this variable.
 Memory is not immediately freed → Garbage Collector will clean it up later.
@@ -662,7 +666,35 @@ namespace CopyConstructorExample
 🔹 4.Private Constructor
 A private constructor is used to restrict object creation from outside the class. It is commonly used in the Singleton pattern to ensure that only one instance of a class exists. Access to that instance is provided through a public static method or property
 
+using System;
 
+public class DatabaseConnection
+{
+    private static DatabaseConnection _instance;
+    private static readonly object _lock = new object();
+
+    private DatabaseConnection()
+    {
+        Console.WriteLine("Database Connection Initialized.");
+    }
+
+    public static DatabaseConnection GetInstance()
+    {
+        lock (_lock)
+        {
+            if (_instance == null)
+            {
+                _instance = new DatabaseConnection();
+            }
+        }
+        return _instance;
+    }
+
+    public void Query(string sql)
+    {
+        Console.WriteLine($"Executing: {sql}");
+    }
+}
 
 
 
