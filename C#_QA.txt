@@ -609,6 +609,55 @@ class Geeks
         Console.WriteLine(g2.Details);
     }
 }
+---------------------------or--------------------------------
+using System;
+
+namespace CopyConstructorExample
+{
+    class Player
+    {
+        public string name;
+        public int health;
+
+        // 1. Parameterized Constructor
+        public Player(string name, int health)
+        {
+            this.name = name;
+            this.health = health;
+        }
+
+        // 2. Copy Constructor
+        // It takes an object of type 'Player' as an argument
+        public Player(Player otherPlayer)
+        {
+            this.name = otherPlayer.name;
+            this.health = otherPlayer.health;
+        }
+
+        public void DisplayStats()
+        {
+            Console.WriteLine($"Player: {name} | Health: {health}");
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            // Create the first player
+            Player p1 = new Player("Warrior", 100);
+            
+            // Create a second player by copying p1
+            Player p2 = new Player(p1);
+            
+            // Change the name of the second player
+            p2.name = "Warrior Clone";
+
+            p1.DisplayStats(); // Output: Warrior, 100
+            p2.DisplayStats(); // Output: Warrior Clone, 100
+        }
+    }
+}
 
 
 
