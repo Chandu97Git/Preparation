@@ -695,7 +695,8 @@ public class DatabaseConnection
         Console.WriteLine($"Executing: {sql}");
     }
 }
-
+🔹  Static Constructor
+A static constructor in C# is used to initialize static members of a class. It is automatically invoked by the CLR before the first instance is created or any static member is accessed. It executes only once and cannot be called explicitly or accept parameters.
 
 
 
