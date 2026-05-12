@@ -1,3 +1,34 @@
+When Angular application starts, what executes first?
+When an Angular application starts, the browser first loads index.html, which acts as the host page of the application. Inside it, Angular looks for the root selector, usually <app-root>.
+
+After that, main.ts executes as the entry point of the Angular application. In main.ts, Angular bootstraps the root component using bootstrapApplication() in standalone applications (or AppModule in older Angular versions).
+
+Next, Angular loads application configurations such as providers (HttpClient, Router, services, interceptors) from app.config.ts or module configuration. Then the root component gets initialized, where the constructor executes first for dependency injection, followed by lifecycle hooks like ngOnInit() for component initialization and API calls.
+
+After initialization, Angular renders the root template and injects it into the <app-root> selector inside index.html. Finally, the Router checks the URL and loads the appropriate component inside the router-outlet
+
+index.html
+↓
+main.ts
+↓
+bootstrapApplication()
+↓
+app.config.ts
+↓
+Root Component
+↓
+constructor()
+↓
+ngOnInit()
+↓
+Template Rendering
+↓
+Router
+↓
+Child Components
+
+❓ Explain Angular project architecture in your project
+
 ❓ Question: What is a Component?
 ✅ Answer (Deloitte-level)
 
