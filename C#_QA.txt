@@ -1053,6 +1053,11 @@ Stack vs Heap
 | Small memory                           | Large memory                     |
 | Uses LIFO (Last In, First Out)         | Dynamic allocation               |
 
+In C#, memory is mainly divided into two areas: Stack Memory and Heap Memory.
+
+The Stack is used to store local variables, method parameters, and references to objects. It follows the Last In First Out (LIFO) principle. Memory allocation and deallocation are very fast because the CLR automatically manages it when a method is called and when it exits.
+
+The Heap is used to store the actual objects created using the new keyword, such as class instances, arrays, collections, and strings. Heap memory is larger than stack memory, and objects remain there until they are no longer referenced and are removed by the Garbage Collector.
 
 What is Garbage Collection?
 ----------------------------
