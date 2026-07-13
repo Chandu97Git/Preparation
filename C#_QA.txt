@@ -711,6 +711,8 @@ We can achieve this using access modifiers like private, public, protected, and 
 🔷 Why use encapsulation?
 ----------------------
 Because it hides internal implementation and prevents unauthorized access to data.
+Benefits  ===>   Security, Validation, Maintainability
+
 For Ex:
 -------
 using System;
@@ -926,6 +928,124 @@ Contains properties and methods
 Instance of class
 Memory allocated
 Can access members
+
+🔷 Difference between Overloading and Overriding
+------------------------------------------------
+
+| Overloading          | Overriding              |
+| -------------------- | ----------------------- |
+| Same class           | Derived class           |
+| Compile time         | Runtime                 |
+| Different parameters | Same parameters         |
+| No virtual           | Uses virtual & override |
+
+🔷 Interface vs Abstract Class
+-------------------------------
+| Interface            | Abstract Class                       |
+| -------------------- | --------------------------------     |
+| Only contract        | Contract + common implementation     |
+| Multiple inheritance | Single inheritance                   |
+| No constructor       | Can have constructor                 |
+| All members public   | Any access modifier                  |
+| No fields            | Can have fields                      |
+
+What is the difference between an Interface and an Abstract Class?
+-------------------------------------------------------------------
+An interface defines a contract. It specifies what methods a class must implement but doesn't provide shared implementation. We typically use interfaces for Dependency Injection and when unrelated classes need the same capability. For example, INotification can be implemented by EmailNotification, SmsNotification, and PushNotification, each with its own Send() implementation.
+
+An abstract class is used when multiple related classes share common state or behavior. It can contain both implemented and abstract methods. For example, in a payment system, all payment types can inherit from an abstract Payment class that provides a common PrintReceipt() method, while each payment type implements its own MakePayment() logic.
+
+Abstract Class
+--------------
+using System;
+
+public abstract class Payment
+{
+    // Common implementation
+    public void PrintReceipt()
+    {
+        Console.WriteLine("Receipt Printed Successfully.");
+    }
+
+    // Different implementation for each payment type
+    public abstract void MakePayment(decimal amount);
+}
+
+public class CreditCardPayment : Payment
+{
+    public override void MakePayment(decimal amount)
+    {
+        Console.WriteLine($"Paid ₹{amount} using Credit Card");
+    }
+}
+
+public class UpiPayment : Payment
+{
+    public override void MakePayment(decimal amount)
+    {
+        Console.WriteLine($"Paid ₹{amount} using UPI");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Payment payment = new CreditCardPayment();
+
+        payment.MakePayment(500);
+
+        payment.PrintReceipt();
+    }
+}
+
+Interface Example
+-----------------
+
+using System;
+
+public interface INotification
+{
+    void Send();
+}
+
+public class EmailNotification : INotification
+{
+    public void Send()
+    {
+        Console.WriteLine("Email Sent");
+    }
+}
+
+public class SmsNotification : INotification
+{
+    public void Send()
+    {
+        Console.WriteLine("SMS Sent");
+    }
+}
+
+public class PushNotification : INotification
+{
+    public void Send()
+    {
+        Console.WriteLine("Push Notification Sent");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        INotification notify = new EmailNotification();
+
+        notify.Send();
+    }
+}
+
+
+
+
 
 2️⃣ Difference: var vs dynamic
 var → Compiler determines type at compile-time, strongly typed. If the variable does not initialized it throw an error.
