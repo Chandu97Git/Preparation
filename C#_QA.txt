@@ -702,23 +702,6 @@ A static constructor in C# is used to initialize static members of a class. It i
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 OOPS Concepts in C#
 -------------------
 🔷 Encapsulation: 
