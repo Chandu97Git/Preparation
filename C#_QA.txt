@@ -707,6 +707,10 @@ OOPS Concepts in C#
 🔷 Encapsulation: 
 Encapsulation means hiding the internal details of an object and exposing only what’s necessary.
 We can achieve this using access modifiers like private, public, protected, and internal, along with properties and methods.
+
+🔷 Why use encapsulation?
+----------------------
+Because it hides internal implementation and prevents unauthorized access to data.
 For Ex:
 -------
 using System;
@@ -802,7 +806,8 @@ Hybrid Inheritance : Combination of two or more inheritance types
 Polymorphism means one method can have multiple forms. It is of two types: compile-time and runtime polymorphism. Compile-time polymorphism is achieved using method overloading, where the same method name has different parameters. Runtime polymorphism is achieved using method overriding, where a child class provides a different implementation of a parent class method using virtual and override keywords.
 using System;
 
-Method Overload
+🔷 Method Overload
+------------------
 using System;
 
 class Calculator
@@ -838,7 +843,8 @@ class Program
     }
 }
 
-Method Override
+🔷 Method Override
+---------------------
 public class Animal
 {
     public virtual void Sound()
@@ -909,7 +915,17 @@ class CardPayment : IPayment
     }
 }
 
+🔥 Class
+---------
+Blueprint
+No memory allocated
+Contains properties and methods
 
+🔥 Object
+----------
+Instance of class
+Memory allocated
+Can access members
 
 2️⃣ Difference: var vs dynamic
 var → Compiler determines type at compile-time, strongly typed. If the variable does not initialized it throw an error.
