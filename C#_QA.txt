@@ -1175,6 +1175,7 @@ Dictionary<TKey, TValue>
 HashSet<T>
 Queue<T>
 Stack<T>
+
 List<T> is used for ordered collections where duplicates are allowed and index-based access is needed.
 
 Dictionary<TKey, TValue> stores data as key-value pairs with unique keys and provides very fast lookups using hashing.
@@ -1184,6 +1185,16 @@ HashSet<T> stores only unique elements and is useful for removing duplicates or 
 Queue<T> follows the FIFO principle and is suitable for scenarios like print queues or ticketing systems.
 
 Stack<T> follows the LIFO principle and is commonly used for undo functionality, browser navigation, and the program's call stack.
+
+
+| Requirement                   | Best Collection             | Why                                        |
+| ----------------------------- | --------------------------- | ------------------------------------------ |
+| Display all employees         | `List<Employee>`            | Ordered collection with duplicates allowed |
+| Find employee by Employee ID  | `Dictionary<int, Employee>` | Fast lookup by unique key                  |
+| Store unique department names | `HashSet<string>`           | Automatically removes duplicates           |
+| Process print requests        | `Queue<PrintJob>`           | FIFO processing                            |
+| Implement Undo functionality  | `Stack<Action>`             | LIFO behavior                              |
+
 
 
 2️⃣ Difference: var vs dynamic
