@@ -1164,6 +1164,26 @@ class Program
     }
 }
 
+What are Collections?
+---------------------
+Collections are classes provided by the .NET Framework to store and manage groups of objects dynamically. Unlike arrays, collections can grow or shrink at runtime and provide built-in methods for adding, removing, searching, and sorting data.
+
+Some commonly used collections are:
+
+List<T>
+Dictionary<TKey, TValue>
+HashSet<T>
+Queue<T>
+Stack<T>
+List<T> is used for ordered collections where duplicates are allowed and index-based access is needed.
+
+Dictionary<TKey, TValue> stores data as key-value pairs with unique keys and provides very fast lookups using hashing.
+
+HashSet<T> stores only unique elements and is useful for removing duplicates or checking existence efficiently.
+
+Queue<T> follows the FIFO principle and is suitable for scenarios like print queues or ticketing systems.
+
+Stack<T> follows the LIFO principle and is commonly used for undo functionality, browser navigation, and the program's call stack.
 
 
 2️⃣ Difference: var vs dynamic
