@@ -91,5 +91,34 @@ class Program
         Console.WriteLine($"Second Largest = {secondLargest}");
     }
 }
+------------------------------------------
+<====Program to Find Vowels in a Name====>
+==========================================
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Enter the Name");
+        string name = Console.ReadLine();
+        int count=0;
+        
+        Console.Write("Vowels are: ");
+        
+    
+        foreach (char ch in name.ToLower())
+        {
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+            {
+                Console.Write(ch + " ");
+                count ++;
+            }
+        }
+         Console.WriteLine();
+        Console.Write($"Number of vowels: {count}");
+        
+    }
+}
 
 
