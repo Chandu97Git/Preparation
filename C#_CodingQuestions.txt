@@ -9,6 +9,13 @@ public class Program
 	{
 		Console.WriteLine("Enter Name");
 		string name = Console.ReadLine();
+
+//      string rev = string.Empty;
+//      for(int i= name.Length-1; i>=0; i--)
+// 		{
+// 			rev+=name[i];
+// 		}
+		
 	
 		if (!string.IsNullOrEmpty(name))
 		{
@@ -53,4 +60,36 @@ else
 {
     Console.WriteLine("Invalid input");
 }
+------------------------------------------------------------
+Q) Find Second Largest no of an array
+---------------------------------
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] arr = { 10, 20, 5, 40, 30 };
+
+        int largest = int.MinValue;
+        int secondLargest = int.MinValue;
+
+        foreach (int num in arr)
+        {
+            if (num > largest)
+            {
+                secondLargest = largest;
+                largest = num;
+            }
+            else if (num > secondLargest && num != largest)
+            {
+                secondLargest = num;
+            }
+        }
+
+        Console.WriteLine($"Largest = {largest}");
+        Console.WriteLine($"Second Largest = {secondLargest}");
+    }
+}
+
 
