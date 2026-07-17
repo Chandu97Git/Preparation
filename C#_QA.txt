@@ -1,3 +1,71 @@
+
+Introduce Yourself
+------------------
+Good morning, and thank you for giving me this opportunity.
+
+My name is Chandu Undurthi. I have around 4 years of experience as a .NET Full Stack Developer. Currently, I am working as an Associate Software Engineer at APTOnline, Hyderabad, where I develop enterprise and government web applications using ASP.NET Core, ASP.NET Web API, Angular, Entity Framework Core, Dapper, and SQL Server.
+
+During my experience, I have worked on multiple large-scale projects such as the APSCHE Web-Based Admission System, AP PGECET Portal, HRMS, and Telangana RERA Complaint Management System. These applications are used by thousands of users, and my responsibilities include developing REST APIs, integrating Angular front-end with backend services, implementing JWT-based authentication, designing SQL queries and stored procedures, optimizing application performance, and fixing production issues.
+
+I have good knowledge of Object-Oriented Programming, ASP.NET Core, Web API, Entity Framework Core, Angular, SQL Server, Git, and Agile development. I also have experience working closely with business analysts, QA teams, and clients to understand requirements and deliver quality software.
+
+What I enjoy most is solving real-world business problems, learning new technologies, and continuously improving application performance and user experience.
+
+I am now looking for an opportunity like Medpace where I can work on global products, enhance my technical skills, and contribute to software that has a meaningful impact on healthcare and clinical research.
+
+2. Explain Your Current Project (APSCHE Web-Based Admission System)
+-----------------------------------
+My primary project is the APSCHE Web-Based Admission System, which is a state-level online admission portal developed for the Andhra Pradesh State Council of Higher Education.
+
+The application manages the complete admission process for students, starting from online registration, certificate upload, payment processing, verification, web options selection, seat allotment, and downloading the final allotment order.
+
+Thousands of students use this portal during every admission cycle.
+
+My Role in the Project
+------------------------
+Say this confidently.
+
+I work as a Full Stack Developer.
+
+My responsibilities include requirement analysis, backend API development, frontend development using Angular, database design, bug fixing, performance optimization, testing, deployment support, and production issue resolution.
+
+5. My Day-to-Day Work
+------------------------
+Answer like this:
+
+My typical workday starts with attending the daily stand-up meeting where each team member shares the previous day's work, today's tasks, and any blockers.
+
+After the meeting, I work on the assigned user stories or bug fixes.
+
+I first analyze the requirement, discuss any questions with the Business Analyst if needed, and then start development.
+
+If the task is backend-related, I develop or modify APIs using ASP.NET Core and SQL Server.
+
+If it's frontend-related, I implement Angular components, forms, validations, and integrate APIs.
+
+Once development is complete, I perform unit testing, verify APIs using Postman, and test the UI.
+
+After successful testing, I commit the code to Git, create a Pull Request, address review comments if any, and finally move the task for QA testing.
+
+During UAT or production, I also investigate issues, analyze logs, identify root causes, and provide fixes.
+
+Explain One Feature You Developed
+----------------------------------
+One important feature I developed was JWT-based authentication.
+
+When a user logs in successfully, the backend generates a JWT token containing the user's identity and role information.
+
+This token is returned to the Angular application and stored securely.
+
+Every API request includes this token in the Authorization header.
+
+The backend validates the token before processing the request.
+
+Based on the user's role, authorization policies determine whether the requested operation is allowed.
+
+This implementation significantly improved application security.
+
+
 🔹 Class:
 -------------
 👉 "A class in C# is a blueprint used to create objects. It contains properties and methods that define the data and behavior of an object."
