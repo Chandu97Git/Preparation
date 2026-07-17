@@ -65,6 +65,12 @@ Based on the user's role, authorization policies determine whether the requested
 
 This implementation significantly improved application security.
 
+Why Should Medpace Hire You?
+----------------------------
+I have strong experience in building enterprise-level web applications using technologies that match your requirements, including C#, ASP.NET Core, Angular, SQL Server, Entity Framework, Git, and REST APIs. I have worked on applications with large user bases, understand the complete software development lifecycle, and enjoy collaborating with cross-functional teams. I am a quick learner, adaptable to new domains, and excited about contributing to Medpace's mission of developing software that supports clinical research and improves patient outcomes.
+
+
+
 
 🔹 Class:
 -------------
