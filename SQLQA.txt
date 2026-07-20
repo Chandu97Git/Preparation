@@ -65,7 +65,7 @@ SAVEPOINT → Set checkpoint
 SELECT is used to retrieve data from a table.
 ex=> select col_name from table_name;
 
-What is WHERE?
+✅ What is WHERE?
 WHERE filters rows based on a condition.
 
 Operators used in WHERE
@@ -83,7 +83,33 @@ Operators used in WHERE
 | LIKE     | Pattern search        |
 | IS NULL  | Null values           |
 
+✅ What is ORDER BY?
+Used to sort data.
+Ascending (ASC)
+Descending (DESC)
 
+✅ What is DISTINCT?
+Removes duplicate values.
+SELECT DISTINCT Department FROM Employee;
+
+| DISTINCT              | GROUP BY                        |
+| --------------------- | ------------------------------- |
+| Removes duplicates    | Groups rows                     |
+| No aggregation needed | Often used with COUNT, SUM, AVG |
+
+What is TOP? 
+Returns the first N rows.
+SELECT TOP 3 * FROM Employee;
+SELECT TOP 1 * FROM Employee ORDER BY Salary DESC;
+
+TOP 1
+Returns the complete row (when ordered appropriately).
+
+MAX()
+Returns only the maximum value.
+
+What is Alias?
+Alias gives a temporary name to a column or table.
 
 
 ✅ What is a Primary Key?
