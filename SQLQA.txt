@@ -60,6 +60,32 @@ COMMIT → Save changes
 ROLLBACK → Undo changes
 SAVEPOINT → Set checkpoint
 
+
+✅ What is SELECT?
+SELECT is used to retrieve data from a table.
+ex=> select col_name from table_name;
+
+What is WHERE?
+WHERE filters rows based on a condition.
+
+Operators used in WHERE
+
+| Operator | Meaning               |
+| -------- | --------------------- |
+| =        | Equal                 |
+| >        | Greater than          |
+| <        | Less than             |
+| >=       | Greater than or equal |
+| <=       | Less than or equal    |
+| <>       | Not equal             |
+| BETWEEN  | Range                 |
+| IN       | Multiple values       |
+| LIKE     | Pattern search        |
+| IS NULL  | Null values           |
+
+
+
+
 ✅ What is a Primary Key?
 A Primary Key is a field that uniquely identifies each row in a table and cannot contain NULL or duplicate values.
 🔹 Key Characteristics
