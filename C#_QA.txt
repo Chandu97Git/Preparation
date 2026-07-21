@@ -780,11 +780,22 @@ OOPS Concepts in C#
 🔷 Encapsulation: 
 Encapsulation means hiding the internal details of an object and exposing only what’s necessary.
 We can achieve this using access modifiers like private, public, protected, and internal, along with properties and methods.
+Encapsulation is the process of binding data (variables) and methods (functions) into a single unit (class) while restricting direct access to the internal data.
 
 🔷 Why use encapsulation?
 ----------------------
 Because it hides internal implementation and prevents unauthorized access to data.
 Benefits  ===>   Security, Validation, Maintainability
+
+| Access Modifier      | Same Class | Child (Same Assembly) | Child (Different Assembly) | Unrelated (Same Assembly) | Unrelated (Different Assembly) |
+| -------------------- | :--------: | :-------------------: | :------------------------: | :-----------------------: | :----------------------------: |
+| `private`            |      ✅     |           ❌           |              ❌             |             ❌             |                ❌               |
+| `protected`          |      ✅     |           ✅           |              ✅             |             ❌             |                ❌               |
+| `internal`           |      ✅     |           ✅           |              ❌             |             ✅             |                ❌               |
+| `protected internal` |      ✅     |           ✅           |              ✅             |             ✅             |                ❌               |
+| `private protected`  |      ✅     |           ✅           |              ❌             |             ❌             |                ❌               |
+| `public`             |      ✅     |           ✅           |              ✅             |             ✅             |                ✅               |
+
 
 For Ex:
 -------
