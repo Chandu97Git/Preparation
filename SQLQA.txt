@@ -111,6 +111,31 @@ Returns only the maximum value.
 What is Alias?
 Alias gives a temporary name to a column or table.
 
+Execution Order of a SQL Query
+This is a very common interview question. Although we write the query in one order, SQL Server processes it in a different order.
+
+| Written Order | Execution Order              |
+| ------------- | ---------------------------- |
+| SELECT        | 4                            |
+| FROM          | 1                            |
+| WHERE         | 2                            |
+| ORDER BY      | 5                            |
+| TOP           | 6 (after sorting the result) |
+| DISTINCT      | 3                            |
+
+SELECT DISTINCT TOP 2 Name
+FROM Employee
+WHERE Salary > 35000
+ORDER BY Name;
+
+SQL Server logically processes it as:
+Read data from Employee (FROM)
+Filter rows with Salary > 35000 (WHERE)
+Remove duplicate names (DISTINCT)
+Select the Name column (SELECT)
+Sort names alphabetically (ORDER BY)
+Return only the first 2 rows (TOP)
+
 
 ✅ What is a Primary Key?
 A Primary Key is a field that uniquely identifies each row in a table and cannot contain NULL or duplicate values.
