@@ -1,6 +1,62 @@
 🔹 What is WebApplicationBuilder and WebApplication?
 A) WebApplicationBuilder is used to configure services and settings, while WebApplication is the built application used to define middleware and handle HTTP requests.
 
+ASP.NET Core Request Pipeline
+-----------------------------
+In ASP.NET Core, every request enters the Kestrel web server and flows through a middleware pipeline. Middleware components execute in the order they are registered. Each middleware can inspect or modify the request, call the next middleware, and then inspect or modify the response on the way back. Routing matches the incoming URL to an endpoint, authentication validates the user's identity, authorization checks permissions, and finally the controller action executes. If a middleware doesn't call the next delegate, the pipeline stops, which is called short-circuiting. The order of middleware is critical—for example, authentication must run before authorization, and exception handling should be registered early so it can catch unhandled exceptions.
+
+Browser 
+   │
+   ▼
+Kestrel Server
+   │
+   ▼
+Middleware 1
+   │
+Middleware 2
+   │
+Middleware 3
+   │
+Routing
+   │
+Controller
+   │
+Service
+   │
+Repository
+   │
+Database
+   │
+Response
+
+Responsibilities
+-----------------
+Kestrel: Receives HTTP requests.
+Middleware: Processes requests and responses.
+Routing: Finds the matching endpoint.
+Controller: Handles HTTP requests.
+Service Layer: Contains business logic.
+Repository: Interacts with the database.
+
+1. What is ASP.NET Core
+-------------------------
+ASP.NET Core is a cross-platform, high-performance, open-source web framework developed by Microsoft to build:
+REST APIs
+Web Applications (MVC)
+Real-time applications (SignalR)
+Microservices
+Cloud-native applications
+gRPC services
+Minimal APIs
+
+2. Evolution of ASP.NET
+------------------------
+Classic ASP ==> Script-based, Hard to maintain, Limited separation of concerns
+ASP.NET Web Forms ==> Event-driven programming, ViewState, Server Controls, Heavy page lifecycle
+ASP.NET MVC ==>  Better separation of concerns, Testable, Routing support
+ASP.NET Web API ==> Built specifically for REST services
+ASP.NET Core ==> Combines MVC and Web API into one framework, Cross-platform, High performance, Middleware-based request pipeline
+
 🔷 What is Middleware in ASP.NET Core?
 👉 Middleware is a component that handles HTTP requests and responses in the ASP.NET Core pipeline.
 Every request passes through a series of middleware components
@@ -28,6 +84,7 @@ Logging
 Exception handling
 Request validation
 Performance tracking
+
 🔷 Important Middleware Methods
 1. Use()
 Calls next middleware
