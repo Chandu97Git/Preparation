@@ -57,6 +57,51 @@ ASP.NET MVC ==>  Better separation of concerns, Testable, Routing support
 ASP.NET Web API ==> Built specifically for REST services
 ASP.NET Core ==> Combines MVC and Web API into one framework, Cross-platform, High performance, Middleware-based request pipeline
 
+4. Hosting Model
+When you execute:
+dotnet run
+ASP.NET Core performs several steps.
+Step 1
+The .NET runtime starts the application.
+Step 2
+Program.cs is executed.
+Step 3
+A WebApplicationBuilder is created.
+var builder = WebApplication.CreateBuilder(args);
+This object prepares:
+Configuration
+Logging
+Dependency Injection container
+Hosting environment
+Step 4
+Services are registered.
+builder.Services.AddControllers();
+builder.Services.AddDbContext<AppDbContext>();
+builder.Services.AddScoped<IUserService, UserService>();
+Nothing is created yet. Only registrations are added to the DI container.
+Step 5
+The application is built.
+var app = builder.Build();
+Now the middleware pipeline is assembled.
+Step 6
+Middleware is configured.
+app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
+Step 7
+The application starts listening.
+app.Run();
+By default, Kestrel listens on configured HTTP/HTTPS ports.
+
+Program.cs Deep Dive
+---------------------
+CreateBuilder() creates the host, loads configuration, initializes logging, and prepares the DI container.
+builder.Services registers application services.
+Build() creates the WebApplication and finalizes the pipeline.
+Use...() adds middleware.
+MapControllers() maps controller endpoints.
+Run() starts the server.
+
 🔷 What is Middleware in ASP.NET Core?
 👉 Middleware is a component that handles HTTP requests and responses in the ASP.NET Core pipeline.
 Every request passes through a series of middleware components
