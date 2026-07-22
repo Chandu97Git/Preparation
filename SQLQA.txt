@@ -129,6 +129,7 @@ WHERE Salary > 35000
 ORDER BY Name;
 
 SQL Server logically processes it as:
+-------------------------------------------
 Read data from Employee (FROM)
 Filter rows with Salary > 35000 (WHERE)
 Remove duplicate names (DISTINCT)
@@ -136,6 +137,29 @@ Select the Name column (SELECT)
 Sort names alphabetically (ORDER BY)
 Return only the first 2 rows (TOP)
 
+What are Aggregate Functions?
+-----------------------------
+Aggregate functions perform calculations on multiple rows and return a single value.
+
+What is COUNT()?
+COUNT() counts the number of rows.
+
+select COUNT(*) from employee 
+select COUNT(salary) from employee
+
+What is SUM()?
+Returns the total of a numeric column.
+
+Can SUM() be used on a VARCHAR column?
+No. It works only with numeric data types like INT, DECIMAL, FLOAT, etc.
+select SUM(salary) from EMP_DATA
+
+What is AVG()?
+Returns the average value.
+select AVG(salary) from EMP_DATA
+
+Does AVG() ignore NULL values?
+Yes.
 
 ✅ What is a Primary Key?
 A Primary Key is a field that uniquely identifies each row in a table and cannot contain NULL or duplicate values.
