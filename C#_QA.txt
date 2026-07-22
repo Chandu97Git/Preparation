@@ -50,7 +50,7 @@ During UAT or production, I also investigate issues, analyze logs, identify root
 
 Explain One Feature You Developed
 ----------------------------------
-One important feature I developed was JWT-based authentication.
+One importantfeature I developed was JWT-based authentication.
 
 When a user logs in successfully, the backend generates a JWT token containing the user's identity and role information.
 
