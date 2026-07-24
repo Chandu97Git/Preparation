@@ -161,6 +161,27 @@ select AVG(salary) from EMP_DATA
 Does AVG() ignore NULL values?
 Yes.
 
+Difference between COUNT(*) and COUNT(column)?
+| COUNT(*)         | COUNT(column)               |
+| ---------------- | --------------------------- |
+| Counts every row | Counts only non-NULL values |
+
+What is SUM()?
+Returns the total of a numeric column.
+SELECT SUM(Salary) FROM Employee WHERE Department='IT';
+
+Can SUM() be used on a VARCHAR column?
+No. It works only with numeric data types like INT, DECIMAL, FLOAT, etc.
+
+What is AVG()?
+Returns the average value.
+SELECT AVG(Salary) FROM Employee;
+
+What is MAX()?
+Returns the highest value.
+SELECT MAX(Salary) FROM Employee;
+
+
 ✅ What is a Primary Key?
 A Primary Key is a field that uniquely identifies each row in a table and cannot contain NULL or duplicate values.
 🔹 Key Characteristics
