@@ -180,6 +180,23 @@ SELECT AVG(Salary) FROM Employee;
 What is MAX()?
 Returns the highest value.
 SELECT MAX(Salary) FROM Employee;
+SELECT MAX(OrderDate)  FROM Orders;
+
+Can MAX() work on strings?
+Yes.
+
+What is MIN()?
+Returns the smallest value.
+SELECT MIN(Salary) FROM Employee;
+
+SELECT
+COUNT(*) AS TotalEmployees,
+SUM(Salary) AS TotalSalary,
+AVG(Salary) AS AverageSalary,
+MAX(Salary) AS HighestSalary,
+MIN(Salary) AS LowestSalary
+FROM Employee;
+
 
 
 ✅ What is a Primary Key?
