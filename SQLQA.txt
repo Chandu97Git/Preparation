@@ -197,6 +197,8 @@ MAX(Salary) AS HighestSalary,
 MIN(Salary) AS LowestSalary
 FROM Employee;
 
+What is GROUP BY?
+GROUP BY groups rows having the same value into one group.
 
 
 ✅ What is a Primary Key?
