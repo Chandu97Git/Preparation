@@ -1,3 +1,23 @@
+A Complete Learning Template
+
+Whenever you learn a new topic, follow this order:
+
+What is it?
+Why do we need it?
+What problem does it solve?
+How does it work internally?
+Architecture / Diagram
+Syntax
+Small example
+Real project usage
+Advantages
+Disadvantages
+Performance considerations
+Common mistakes
+Interview questions
+Hands-on practice
+
+
 Introduce Yourself
 ------------------
 Good morning, and thank you for giving me this opportunity.
