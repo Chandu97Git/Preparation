@@ -169,6 +169,13 @@ What is Data Binding?
 ---------------------
 Data Binding is the process of synchronizing data between the component and the HTML template.
 
+| **Binding Category** | **Syntax**            | **Direction**    | **Primary Use Case**                               |
+| -------------------- | --------------------- | ---------------- | -------------------------------------------------- |
+| **Interpolation**    | `{{ value }}`         | Component → View | Display text values in HTML                        |
+| **Property Binding** | `[property]="value"`  | Component → View | Set DOM element properties dynamically             |
+| **Event Binding**    | `(event)="handler()"` | View → Component | Respond to user actions like clicks or typing      |
+| **Two-Way Binding**  | `[(ngModel)]="value"` | Component ↔ View | Keep form controls and component data synchronized |
+
 
 
 
