@@ -30,12 +30,8 @@ Why do we use Services instead of calling APIs directly from Components?
 ------------------------------------------------------------------------
 Services help us separate business logic from UI logic. Components are responsible for displaying data and handling user interactions, while services handle API communication, business rules, and shared functionality. This improves code reusability, maintainability, and testability.
 
-
-
-
-
-
 When Angular application starts, what executes first?
+-----------------------------------------------------
 When an Angular application starts, the browser first loads index.html, which acts as the host page of the application. Inside it, Angular looks for the root selector, usually <app-root>.
 
 After that, main.ts executes as the entry point of the Angular application. In main.ts, Angular bootstraps the root component using bootstrapApplication() in standalone applications (or AppModule in older Angular versions).
@@ -65,6 +61,64 @@ Router
 Child Components
 
 ❓ Explain Angular project architecture in your project
+
+
+1. What is SPA (Single Page Application)?
+-----------------------------------------
+Angular is a SPA framework where only one HTML page is loaded initially. After that, Angular communicates with the backend using HTTP APIs and updates only the required parts of the UI without refreshing the entire page.
+
+Advantages
+-----------
+Faster navigation
+Better user experience
+Less server load
+API-driven architecture
+Easy mobile integration
+
+Disadvantages
+-------------
+Initial loading time is higher
+SEO requires Angular Universal
+JavaScript dependency
+
+2. What is Angular?
+--------------------
+Angular is a TypeScript-based frontend framework developed by Google for building scalable Single Page Applications using components, services, dependency injection, routing, and RxJS
+
+❓ 3. Component Lifecycle [Explain Lifecycle Hooks]
+---------------------------------------------------
+✅ Answer: Lifecycle hooks are methods that allow us to tap into different stages of a component's lifecycle.
+
+Hook,                  Timing,                                                                 Common Use Case
+ngOnChanges(),     Called before ngOnInit and whenever an @Input() property changes.,      Reacting to data passed in from a parent component.
+ngOnInit(),        Called once after the first ngOnChanges.,                               "Initializing logic, fetching data from an API, or setting up variables."
+ngDoCheck(),       Called during every change detection run.,                              Custom change detection logic that Angular can't catch automatically.
+ngAfterViewInit(), Called after the component's views and child views are initialized.,    Accessing DOM elements via @ViewChild.
+ngOnDestroy(),     Called just before Angular destroys the component.,                     Cleanup: unsubscribing from Observables or detaching event listeners to avoid memory leaks.
+
+import { Component, OnInit, OnDestroy } from '@angular/core';
+
+@Component({
+  selector: 'app-timer',
+  template: `<p>Check the console!</p>`
+})
+export class TimerComponent implements OnInit, OnDestroy {
+
+  constructor() {
+    console.log('1. Constructor: Class is instantiated.');
+  }
+
+  ngOnInit() {
+    console.log('2. ngOnInit: Component is initialized and data-bound properties are ready.');
+    // Perfect place for API calls
+  }
+
+  ngOnDestroy() {
+    console.log('3. ngOnDestroy: Cleaning up before the component disappears.');
+    // Stop timers or unsubscribe here
+  }
+}
+
 
 ❓ Question: What is a Component?
 ✅ Answer (Deloitte-level)
@@ -137,38 +191,6 @@ export class UserComponent {
   }
 }
 
-❓ Explain Lifecycle Hooks
-✅ Answer: Lifecycle hooks are methods that allow us to tap into different stages of a component's lifecycle.
-
-Hook,                  Timing,                                                                 Common Use Case
-ngOnChanges(),     Called before ngOnInit and whenever an @Input() property changes.,      Reacting to data passed in from a parent component.
-ngOnInit(),        Called once after the first ngOnChanges.,                               "Initializing logic, fetching data from an API, or setting up variables."
-ngDoCheck(),       Called during every change detection run.,                              Custom change detection logic that Angular can't catch automatically.
-ngAfterViewInit(), Called after the component's views and child views are initialized.,    Accessing DOM elements via @ViewChild.
-ngOnDestroy(),     Called just before Angular destroys the component.,                     Cleanup: unsubscribing from Observables or detaching event listeners to avoid memory leaks.
-
-import { Component, OnInit, OnDestroy } from '@angular/core';
-
-@Component({
-  selector: 'app-timer',
-  template: `<p>Check the console!</p>`
-})
-export class TimerComponent implements OnInit, OnDestroy {
-
-  constructor() {
-    console.log('1. Constructor: Class is instantiated.');
-  }
-
-  ngOnInit() {
-    console.log('2. ngOnInit: Component is initialized and data-bound properties are ready.');
-    // Perfect place for API calls
-  }
-
-  ngOnDestroy() {
-    console.log('3. ngOnDestroy: Cleaning up before the component disappears.');
-    // Stop timers or unsubscribe here
-  }
-}
 
 ❓ When will ngOnChanges NOT trigger?
 👉 When input properties don’t change OR internal variables change.
