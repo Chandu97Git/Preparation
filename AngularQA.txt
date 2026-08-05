@@ -134,7 +134,40 @@ styleUrls:['employee.component.css']
 
 What are Directives?
 --------------------
+Directives are used to change the structure or behavior of DOM elements. Angular provides structural directives like *ngIf, *ngFor, and *ngSwitch, and attribute directives like ngClass and ngStyle
 
+Directive type	       |   Details
+----------------------------------------------
+Components	           |  Every component is also a directive with a template or Define reusable UI with their own template.
+Attribute directives	 |  Change the appearance or behavior of an element, component, or another directive.[ngClass,ngStyle]
+Structural directives	 |  Change the DOM layout by adding and removing DOM elements. [*ngIf, *ngFor, and *ngSwitch]
+
+<div *ngIf="isAdmin">
+<li *ngFor="let emp of employees">
+<div [ngSwitch]="role">
+
+
+Difference Between AngularJS and Angular
+-----------------------------------------
+
+AngularJS is the older JavaScript-based framework that follows the MVC pattern, while Angular is a modern TypeScript-based framework that uses a component-based architecture. Angular offers better performance, improved dependency injection, built-in routing, CLI support, and is more suitable for enterprise applications.
+
+| Feature              | AngularJS        | Angular                              |
+| -------------------- | ---------------- | ------------------------------------ |
+| Language             | JavaScript       | TypeScript                           |
+| Architecture         | MVC              | Component-Based                      |
+| Mobile Support       | Limited          | Excellent                            |
+| Performance          | Slower           | Faster                               |
+| Dependency Injection | Yes              | Improved DI                          |
+| Routing              | External package | Built-in                             |
+| Change Detection     | Dirty Checking   | Zone-based (and newer optimizations) |
+| CLI                  | No               | Yes                                  |
+| Lazy Loading         | No               | Yes                                  |
+| Support              | Ended            | Actively maintained                  |
+
+What is Data Binding?
+---------------------
+Data Binding is the process of synchronizing data between the component and the HTML template.
 
 
 
