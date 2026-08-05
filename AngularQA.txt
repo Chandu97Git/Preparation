@@ -83,7 +83,7 @@ JavaScript dependency
 
 2. What is Angular?
 --------------------
-Angular is a TypeScript-based frontend framework developed by Google for building scalable Single Page Applications using components, services, dependency injection, routing, and RxJS
+Angular is a TypeScript-based front-end framework developed by Google for building scalable Single Page Applications. It follows a component-based architecture where the application is divided into reusable components. Angular provides built-in features such as routing, dependency injection, forms, HTTP client, directives, pipes, and RxJS, making it suitable for enterprise applications.
 
 ❓ 3. Component Lifecycle [Explain Lifecycle Hooks]
 ---------------------------------------------------
@@ -118,6 +118,27 @@ export class TimerComponent implements OnInit, OnDestroy {
     // Stop timers or unsubscribe here
   }
 }
+
+What are the Key Features of Angular?
+-------------------------------------
+Angular provides component-based architecture, dependency injection, routing, data binding, directives, RxJS for asynchronous programming, reactive forms, and Ahead-of-Time compilation, which help build scalable and high-performance applications.
+
+What is a Component?
+--------------------
+A Component is the fundamental building block of Angular applications. It controls a part of the user interface and consists of a TypeScript class for business logic, an HTML template for the view, and CSS for styling. Components make applications modular and reusable.
+@Component({
+selector:'app-employee',
+templateUrl:'employee.component.html',
+styleUrls:['employee.component.css']
+})
+
+What are Directives?
+--------------------
+
+
+
+
+
 
 
 ❓ Question: What is a Component?
