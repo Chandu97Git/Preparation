@@ -1,3 +1,38 @@
+Explain Angular Architecture.?
+-------------------------------
+Angular follows a component-based architecture where the application is divided into reusable components. When a user opens the application, the browser first loads index.html, which contains the root selector. Then main.ts bootstraps the application, application providers are initialized, and the root component is created. The router checks the current URL and loads the corresponding component inside router-outlet. Components interact with services for business logic, services communicate with the backend using HttpClient, and Angular updates the UI automatically when data changes.
+
+Explain the complete Angular application startup flow.
+------------------------------------------------------
+When an Angular application starts, the browser first loads the index.html file, which acts as the host page of the application. It contains the root selector, usually <app-root>.
+
+Next, Angular executes main.ts, which is the entry point of the application. In modern Angular, main.ts bootstraps the application using bootstrapApplication(App, appConfig).
+
+After bootstrapping, Angular loads the application configuration (app.config.ts), where providers such as HttpClient, Router, and interceptors are registered.
+
+Angular then creates the root component (AppComponent). The component constructor executes first for dependency injection, followed by lifecycle hooks such as ngOnInit().
+
+Angular renders the root template (app.html) inside the <app-root> element. The Router checks the current URL and loads the appropriate component into the <router-outlet>. From there, components communicate with services, services use HttpClient to call backend APIs, and Angular updates the UI whenever data changes.
+
+Why do we need index.html?
+--------------------------
+index.html is the host page of the Angular application. It is the first file loaded by the browser. It contains the root selector (<app-root>), where Angular injects the root component. It also contains global resources like meta tags, favicon, fonts, and global CSS or JavaScript files.
+
+Why do we need main.ts?
+-----------------------
+main.ts is the entry point of the Angular application. Its responsibility is to bootstrap the application by loading the root component and application configuration. Without main.ts, Angular doesn't know which component to start.
+
+What is router-outlet?
+-----------------------
+router-outlet is a placeholder directive provided by Angular Router. It acts as a container where Angular dynamically loads components based on the current route.
+
+Why do we use Services instead of calling APIs directly from Components?
+------------------------------------------------------------------------
+
+
+
+
+
 When Angular application starts, what executes first?
 When an Angular application starts, the browser first loads index.html, which acts as the host page of the application. Inside it, Angular looks for the root selector, usually <app-root>.
 
