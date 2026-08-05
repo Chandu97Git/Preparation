@@ -28,6 +28,8 @@ router-outlet is a placeholder directive provided by Angular Router. It acts as 
 
 Why do we use Services instead of calling APIs directly from Components?
 ------------------------------------------------------------------------
+Services help us separate business logic from UI logic. Components are responsible for displaying data and handling user interactions, while services handle API communication, business rules, and shared functionality. This improves code reusability, maintainability, and testability.
+
 
 
 
