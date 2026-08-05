@@ -176,7 +176,58 @@ Data Binding is the process of synchronizing data between the component and the 
 | **Event Binding**    | `(event)="handler()"` | View → Component | Respond to user actions like clicks or typing      |
 | **Two-Way Binding**  | `[(ngModel)]="value"` | Component ↔ View | Keep form controls and component data synchronized |
 
+What are Modules?
+-----------------
+An Angular Module groups related components, directives, pipes, and services. The root module starts the application, while feature modules help organize large applications into manageable sections. Many newer Angular applications also use standalone components instead of modules.
 
+Difference Between NgModule and Component
+-----------------------------------------
+| Component               | NgModule                                |
+| ----------------------- | --------------------------------------- |
+| Represents UI           | Organizes application features          |
+| Contains HTML           | Contains declarations/imports/providers |
+| Has `@Component`        | Has `@NgModule`                         |
+| Reusable UI             | Groups related functionality            |
+| Example: LoginComponent | Example: AdminModule                    |
+
+A Component is responsible for displaying part of the user interface, while an NgModule groups related components, directives, pipes, and services together to organize the application. In newer Angular versions, standalone components can reduce the need for NgModules in many cases.
+
+What is Angular CLI?
+---------------------
+Angular CLI is the official command-line tool for Angular. It simplifies development by generating project structures, components, services, modules, and builds. It also provides commands for serving, testing, and optimizing applications.
+
+Common Angular CLI Commands
+----------------------------
+| Command                               | Purpose                                            |
+| ------------------------------------- | -------------------------------------------------- |
+| `ng new my-app`                       | Create a new Angular project                       |
+| `ng serve`                            | Run the application locally                        |
+| `ng serve --open`                     | Run and open in browser                            |
+| `ng generate component employee`      | Create a component                                 |
+| `ng generate service employee`        | Create a service                                   |
+| `ng generate directive highlight`     | Create a directive                                 |
+| `ng generate pipe titlecase`          | Create a pipe                                      |
+| `ng build`                            | Build the application                              |
+| `ng build --configuration production` | Production build (modern replacement for `--prod`) |
+| `ng test`                             | Run unit tests                                     |
+| `ng lint`                             | Check code quality (if linting is configured)      |
+| `ng version`                          | Display Angular and CLI versions                   |
+
+Quick Interview Revision
+-------------------------
+
+| Question               | One-Line Answer                                                                          |
+| ---------------------- | ---------------------------------------------------------------------------------------- |
+| What is Angular?       | A TypeScript-based framework for building Single Page Applications.                      |
+| Key Features?          | Components, DI, Routing, RxJS, Forms, Directives, Data Binding, AOT.                     |
+| Component?             | The basic building block of an Angular application.                                      |
+| Directive?             | A class that changes the behavior or structure of DOM elements.                          |
+| Angular vs AngularJS?  | Angular is TypeScript-based and component-driven; AngularJS is JavaScript-based and MVC. |
+| Data Binding?          | Synchronizes data between the component and the template.                                |
+| Module?                | Groups related functionality in an Angular application.                                  |
+| NgModule vs Component? | Component builds the UI; NgModule organizes features.                                    |
+| Angular CLI?           | Official tool for creating, building, and managing Angular applications.                 |
+| Common CLI Commands?   | `ng new`, `ng serve`, `ng generate`, `ng build`, `ng test`, `ng version`.                |
 
 
 
