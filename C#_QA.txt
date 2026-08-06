@@ -96,10 +96,13 @@ I have strong experience in building enterprise-level web applications using tec
 👉 "A class in C# is a blueprint used to create objects. It contains properties and methods that define the data and behavior of an object."
 
 🔹 Simple Definition
+----------------------
 A class is a user-defined data type that groups:
-Variables (fields / properties)
-Methods (functions)
+=> Variables (fields / properties)
+=> Methods (functions)
+
 🔹 Key Points (Interview Important)
+---------------------------------------
 Class is a reference type
 It does not occupy memory until object is created
 Supports OOP concepts:
@@ -146,12 +149,13 @@ ShowMessage();
     // logic
 }
 🔹 Breakdown of Each Part
-✅ 1. Modifiers (Optional)
 
+✅ 1. Modifiers (Optional)
+---------------------------
 These control access and behavior of the method.
 
 Common ones:
-
+------------
 public → accessible everywhere
 private → inside class only
 protected, internal
@@ -159,9 +163,10 @@ static → belongs to class (no object needed)
 virtual, override, abstract → used in inheritance
 
 👉 Example:
-
 public static void MyMethod()
+
 ✅ 2. Return Type (void or type)
+---------------------------------
 void → no return value
 int, string, etc. → returns value
 
@@ -177,10 +182,11 @@ Return type can also be user-defined (class)
 ✅ 3. Method Name
 
 👉 Just an identifier (name of method)
-
+--------------------------------------
 CalculateSalary()
 PrintData()
 GetUserDetails()
+
 ✅ 4. Parameters (Optional)
 
 Used to pass data into method.
@@ -201,19 +207,24 @@ public static int Add(int a, int b)
 {
     return a + b;
 }
+
 🔹 2. Types of Methods
+------------------------
 1️⃣ Non-Value Returning
 public static void Print()
 {
     Console.WriteLine("Hello");
 }
+
 2️⃣ Value Returning
+-------------------
 public static string GetName()
 {
     return "Chandu";
 }
-🔹 3. Where to Define Methods?
 
+🔹 3. Where to Define Methods?
+--------------------------------
 👉 Always inside a class
 
 class Program
@@ -224,7 +235,7 @@ class Program
 ✔️ This follows Encapsulation (OOP principle)
 
 🔹 4. How Methods Execute?
-
+----------------------------
 👉 Methods do NOT run automatically
 
 ❗ Except:
@@ -232,7 +243,7 @@ class Program
 Main() → automatically executed by runtime
 
 🔹 5. How to Call Methods
-
+--------------------------
 🔸 1. Non-Static Method
 
 👉 Need object (instance)
