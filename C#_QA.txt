@@ -298,14 +298,18 @@ void → no return
 type → returns value
 
 🔹 1. What is “Instance of a Class”?
-"An instance of a class is created using the new keyword. It allocates memory and returns a reference to the object. Syntax: ClassName obj = new ClassName(); Objects can be created inside the same class or different classes."
+"An instance of a class is created using the new keyword. It allocates memory and returns a reference to the object. 
+Syntax: ClassName obj = new ClassName(); 
+Objects can be created inside the same class or different classes."
 
 👉 An instance = object
 👉 It is a real usable object created from a class
 Example:
 Class → Blueprint 🏗️
 Instance/Object → Actual thing built 🏠
+
 🔹 2. Syntax to Create Instance (Object)
+-----------------------------------------
 ClassName obj = new ClassName();
 🔹 Example
 class Program
