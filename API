@@ -14,6 +14,19 @@ Why is REST called Stateless?
 -----------------------------
 REST is called stateless because the server does not store client session information. Every request must include all the required information, such as authentication tokens, allowing any request to be processed independently.
 
+What are REST Constraints?
+---------------------------
+REST constraints include Client-Server, Statelessness, Cacheability, Uniform Interface, and Layered System. These principles make REST APIs scalable, maintainable, and consistent.
+
+Difference between PUT and PATCH
+-------------------------------
+PUT updates the entire resource and usually expects the complete object. PATCH updates only the specified fields, making it more efficient for partial updates.
+
+Why do we use GET for fetching data?
+-------------------------------------
+GET is used for fetching data because it is intended to be a safe operation that does not modify server data. It is also cacheable and commonly used to retrieve resources.
+
+
 Why do we need APIs?
 --------------------
 APIs allow different applications to communicate. They act as a middle layer between the client and the server, handling authentication, validation, business logic, and database operations while improving security and scalability.
@@ -39,4 +52,5 @@ Difference Between API and REST API
 | Why not connect Angular to SQL Server? | Security, validation, and business logic belong in the API.         |
 | Endpoint?                              | A specific URL where an API can be accessed.                        |
 | JSON?                                  | A lightweight format for exchanging data between client and server. |
+
 
