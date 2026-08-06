@@ -22,7 +22,7 @@ Introduce Yourself
 ------------------
 Good morning, and thank you for giving me this opportunity.
 
-My name is Chandu Undurthi. I have around 4 years of experience as a .NET Full Stack Developer. Currently, I am working as an Associate Software Engineer at APTOnline, Hyderabad, where I develop enterprise and government web applications using ASP.NET Core, ASP.NET Web API, Angular, Entity Framework Core, Dapper, and SQL Server.
+I am Chandu Undurthi. I have around 4 years of experience as a .NET Full Stack Developer. Currently, I am working as an Associate Software Engineer at APTOnline, Hyderabad, where I develop enterprise and government web applications using ASP.NET Core, ASP.NET Web API, Angular, Entity Framework Core, Dapper, and SQL Server.
 
 During my experience, I have worked on multiple large-scale projects such as the APSCHE Web-Based Admission System, AP PGECET Portal, HRMS, and Telangana RERA Complaint Management System. These applications are used by thousands of users, and my responsibilities include developing REST APIs, integrating Angular front-end with backend services, implementing JWT-based authentication, designing SQL queries and stored procedures, optimizing application performance, and fixing production issues.
 
