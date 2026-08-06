@@ -27,9 +27,24 @@ Why do we use GET for fetching data?
 GET is used for fetching data because it is intended to be a safe operation that does not modify server data. It is also cacheable and commonly used to retrieve resources.
 
 
+Why is REST more popular than SOAP(Simple Object Access Protocol)?
+-----------------------------------
+REST is more popular because it is lightweight, easier to develop, commonly uses JSON, and performs well for web and mobile applications. SOAP is more structured and is still used in some legacy enterprise systems.
+
+
+
 Why do we need APIs?
 --------------------
 APIs allow different applications to communicate. They act as a middle layer between the client and the server, handling authentication, validation, business logic, and database operations while improving security and scalability.
+
+| REST                            | SOAP                                |
+| ------------------------------- | ----------------------------------- |
+| Lightweight                     | Heavy                               |
+| Usually JSON                    | XML                                 |
+| Faster                          | Slower                              |
+| Easy to learn                   | More complex                        |
+| Widely used for web/mobile APIs | Common in legacy enterprise systems |
+
 
 Difference Between API and REST API
 ------------------------------------
@@ -39,6 +54,7 @@ Difference Between API and REST API
 | Can use different protocols                            | Commonly uses HTTP                                 |
 | May use various data formats                           | Typically uses JSON (though it can support others) |
 | Includes REST, SOAP, GraphQL, gRPC, etc.               | One type of API                                    |
+
 
 | Question                               | One-Line Answer                                                     |
 | -------------------------------------- | ------------------------------------------------------------------- |
@@ -52,5 +68,7 @@ Difference Between API and REST API
 | Why not connect Angular to SQL Server? | Security, validation, and business logic belong in the API.         |
 | Endpoint?                              | A specific URL where an API can be accessed.                        |
 | JSON?                                  | A lightweight format for exchanging data between client and server. |
+
+
 
 
