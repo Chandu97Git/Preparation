@@ -1,0 +1,42 @@
+1. What is an API?
+-------------------
+API stands for Application Programming Interface. It acts as a bridge between two applications, allowing them to communicate over HTTP. The client sends a request to an API endpoint, the server processes it, interacts with the database if required, and returns a response, usually in JSON format. In my ASP.NET Core projects, the Angular frontend consumes Web APIs to perform CRUD operations, while the APIs handle validation, authentication, business logic, and database interactions.
+
+What is Web API?
+----------------
+A Web API is an API that is accessible over HTTP. ASP.NET Core Web API is used to expose backend functionality so that web, mobile, or other applications can access it.
+
+2. What is REST API?
+--------------------
+REST API stands for Representational State Transfer API. It is an architectural style used to build web APIs. A REST API exposes resources through URLs and uses standard HTTP methods like GET, POST, PUT, PATCH, and DELETE to perform CRUD operations. It is stateless, lightweight, and commonly exchanges data in JSON format. In my ASP.NET Core projects, I build REST APIs that are consumed by Angular applications.
+
+Why is REST called Stateless?
+-----------------------------
+REST is called stateless because the server does not store client session information. Every request must include all the required information, such as authentication tokens, allowing any request to be processed independently.
+
+Why do we need APIs?
+--------------------
+APIs allow different applications to communicate. They act as a middle layer between the client and the server, handling authentication, validation, business logic, and database operations while improving security and scalability.
+
+Difference Between API and REST API
+------------------------------------
+| API                                                    | REST API                                           |
+| ------------------------------------------------------ | -------------------------------------------------- |
+| General concept for communication between applications | A specific architectural style for designing APIs  |
+| Can use different protocols                            | Commonly uses HTTP                                 |
+| May use various data formats                           | Typically uses JSON (though it can support others) |
+| Includes REST, SOAP, GraphQL, gRPC, etc.               | One type of API                                    |
+
+| Question                               | One-Line Answer                                                     |
+| -------------------------------------- | ------------------------------------------------------------------- |
+| Why API?                               | To allow secure communication between applications.                 |
+| How API works?                         | Client → API → Database → API → Client.                             |
+| REST API?                              | An architectural style using HTTP methods to operate on resources.  |
+| Web API?                               | An API accessible over HTTP/HTTPS.                                  |
+| Can API return XML?                    | Yes, along with JSON and other formats.                             |
+| API to API communication?              | Yes, for integrating external or internal services.                 |
+| Protocol used?                         | HTTP/HTTPS.                                                         |
+| Why not connect Angular to SQL Server? | Security, validation, and business logic belong in the API.         |
+| Endpoint?                              | A specific URL where an API can be accessed.                        |
+| JSON?                                  | A lightweight format for exchanging data between client and server. |
+
