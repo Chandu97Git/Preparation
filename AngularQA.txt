@@ -161,37 +161,88 @@ Data binding is a mechanism that synchronizes data between the component class a
 | Event Binding    | `(event)="method()"`  | View → Component | Handle user events                                    |
 | Two-Way Binding  | `[(ngModel)]="value"` | Both             | Synchronize form inputs                               |
 
+| Constructor                                   | ngOnInit                                          |
+| --------------------------------------------- | ------------------------------------------------- |
+| TypeScript feature                            | Angular lifecycle hook                            |
+| Called when the component instance is created | Called after Angular initializes input properties |
+| Used for dependency injection                 | Used for component initialization                 |
+| Should not contain business logic             | Best place for API calls and initialization logic |
+| Executes before `ngOnInit`                    | Executes after the constructor                    |
+| Runs only once when the component is created  | Runs once after the first `ngOnChanges` (if any)  |
 
+6. What is Dependency Injection (DI)?
+--------------------------------------
+Dependency Injection (DI) is a design pattern in Angular that allows a class to receive its required dependencies from Angular instead of creating them manually. It promotes loose coupling, code reusability, and easier unit testing.
 
+What is an Injector?
+---------------------
+Injector is responsible for creating and providing service instances.
 
+7. What is a Service?
+---------------------
+A Service is a reusable TypeScript class used to implement business logic, API communication, data sharing, or common functionality that can be used by multiple components.
 
+Why not API inside Component? ==> Components should only handle UI. Services should contain business logic and API communication.
 
+8. Observable vs Promise
+-------------------------
+Both Observable and Promise are used for handling asynchronous operations. A Promise emits only one value and cannot be cancelled, whereas an Observable can emit multiple values over time, is lazy, cancellable, and provides many powerful RxJS operators.
 
+| Observable      | Promise              |
+| --------------- | -------------------- |
+| Multiple values | Single value         |
+| Lazy execution  | Executes immediately |
+| Can cancel      | Cannot cancel        |
+| RxJS operators  | No operators         |
+| Used by Angular | Native JavaScript    |
 
+9. Subject vs BehaviorSubject
+------------------------------
+Subject is both an Observable and an Observer. It allows multiple subscribers to receive the same emitted values.
+BehaviorSubject stores the latest emitted value and immediately sends it to any new subscriber.
 
+| Subject                         | BehaviorSubject                  |
+| ------------------------------- | -------------------------------- |
+| No initial value                | Initial value required           |
+| Doesn't remember previous value | Remembers latest value           |
+| New subscriber gets nothing     | New subscriber gets latest value |
 
+10. switchMap vs mergeMap
+-------------------------
+switchMap cancels the previous inner Observable whenever a new value is emitted.
+mergeMap executes all inner Observables simultaneously without cancelling any previous request.
 
+| switchMap                | mergeMap       |
+| ------------------------ | -------------- |
+| Cancels previous request | Doesn't cancel |
+| Latest request only      | Executes all   |
+| Search                   | Upload         |
 
+Why do we use subscribe()?
+--------------------------
+subscribe() is used to execute an Observable and receive the values it emits. Observables in Angular are lazy, meaning they do not start executing until someone subscribes to them. By subscribing, we can handle the emitted data, errors, and completion events.
 
+11. What are Reactive Forms?
+----------------------------
+Reactive Forms are a model-driven approach to handling forms in Angular. The form structure and validation logic are defined in the TypeScript component instead of the HTML template. Reactive Forms provide better scalability, dynamic form creation, and easier testing, making them suitable for enterprise applications.
 
+Angular provides two types of forms: Template-Driven Forms and Reactive Forms. Template-Driven Forms use FormsModule and ngModel, and are suitable for simple forms with minimal validation. Reactive Forms use ReactiveFormsModule and define the form structure in TypeScript using FormGroup, FormControl, and FormArray. They are preferred for enterprise applications because they offer better validation, dynamic form support, maintainability, and testability. In my projects, I use Reactive Forms for complex forms such as student registration and employee management
 
+12. What is Routing?
+--------------------
+Routing in Angular is a mechanism that enables navigation between different components without reloading the entire page. Angular Router maps URLs to components, allowing the application to behave as a Single Page Application.
 
+13. What are Route Guards?
+--------------------------
+Route Guards are Angular services/functions that control navigation by deciding whether a route can be activated, deactivated, loaded, or matched. They are mainly used for authentication and authorization.
 
+14. What are HTTP Interceptors?
+-------------------------------
+HTTP Interceptors are services that intercept outgoing HTTP requests and incoming HTTP responses. They are commonly used for adding authentication tokens, logging, error handling, and modifying requests or responses globally.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+15. What is Lazy Loading?
+-------------------------
+Lazy Loading is a technique where Angular loads feature modules only when they are required instead of loading the entire application at startup. This improves the application's initial load time and overall performance.
 
 
 
