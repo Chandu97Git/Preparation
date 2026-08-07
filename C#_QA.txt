@@ -822,8 +822,8 @@ Encapsulation is the process of binding data (variables) and methods (functions)
 Because it hides internal implementation and prevents unauthorized access to data.
 Benefits  ===>   Security, Validation, Maintainability
 
-| Access Modifier      | Same Class | Child (Same Assembly) | Child (Different Assembly) | Unrelated (Same Assembly) | Unrelated (Different Assembly) |
-| -------------------- | :--------: | :-------------------: | :------------------------: | :-----------------------: | :----------------------------: |
+| Access Modifier      | Same Class  | Child (Same Assembly)    | Child (Different Assembly)  | Unrelated (Same Assembly)   | Unrelated (Different Assembly) |
+| -------------------- | :--------:  | :-------------------:    | :------------------------:  | :-----------------------:   | :----------------------------: |
 | `private`            |      ✅     |           ❌           |              ❌             |             ❌             |                ❌               |
 | `protected`          |      ✅     |           ✅           |              ✅             |             ❌             |                ❌               |
 | `internal`           |      ✅     |           ✅           |              ❌             |             ✅             |                ❌               |
@@ -876,6 +876,7 @@ In the Main method, which is the entry point of the program, I created an object
 This approach ensures controlled access to data and prevents invalid values from being assigned.
 
 🔷 Inheritance:
+-----------------
 Inheritance allows a class (child/derived) to inherit fields and methods from another class (parent/base), promoting code reuse and hierarchical relationships.
 
 using System;
@@ -924,7 +925,10 @@ Multiple Inheritance : One class inherits from multiple base classes. C# does NO
 Hybrid Inheritance : Combination of two or more inheritance types
 
 🔷 Polymorphism:
-Polymorphism means one method can have multiple forms. It is of two types: compile-time and runtime polymorphism. Compile-time polymorphism is achieved using method overloading, where the same method name has different parameters. Runtime polymorphism is achieved using method overriding, where a child class provides a different implementation of a parent class method using virtual and override keywords.
+-----------------
+Polymorphism means one method can have multiple forms. It is of two types: compile-time and runtime polymorphism. 
+Compile-time polymorphism is achieved using method overloading, where the same method name has different parameters.
+Runtime polymorphism is achieved using method overriding, where a child class provides a different implementation of a parent class method using virtual and override keywords.
 using System;
 
 🔷 Method Overload
@@ -990,8 +994,11 @@ class Program
         obj.Sound();
     }
 }
+
 🔷 Abstraction
-Abstraction is used to hide implementation details and expose only necessary functionality. It can be achieved using abstract classes and interfaces. In an abstract class, we can have both abstract and non-abstract methods, whereas interfaces contain only method declarations. This helps in reducing complexity and improving code maintainability.
+-----------------
+Abstraction is used to hide implementation details and expose only necessary functionality. It can be achieved using abstract classes and interfaces. 
+In an abstract class, we can have both abstract and non-abstract methods, whereas interfaces contain only method declarations. This helps in reducing complexity and improving code maintainability.
 using System;
 🔥 Example Using Abstract Class
 
