@@ -244,6 +244,26 @@ HTTP Interceptors are services that intercept outgoing HTTP requests and incomin
 -------------------------
 Lazy Loading is a technique where Angular loads feature modules only when they are required instead of loading the entire application at startup. This improves the application's initial load time and overall performance.
 
+16. What is Change Detection?
+-----------------------------
+Change Detection is Angular's mechanism for keeping the UI synchronized with the application data. Whenever the application's state changes, Angular checks the component tree, detects the changes, and updates only the affected parts of the DOM.
+
+17. What is OnPush Change Detection Strategy?
+---------------------------------------------
+OnPush is an optimized change detection strategy in Angular. Instead of checking a component on every change detection cycle, Angular checks it only when its @Input reference changes, an event occurs inside the component, or an Observable used by the template emits a new value.
+
+18. What is trackBy?
+--------------------
+trackBy is used with *ngFor to help Angular uniquely identify list items. Instead of recreating the entire list whenever data changes, Angular updates only the modified items, improving rendering performance.
+
+19. switchMap vs mergeMap
+-------------------------
+switchMap maps each source value to a new Observable and automatically cancels the previous inner Observable when a new value is emitted.
+mergeMap maps each source value to an inner Observable and executes all inner Observables concurrently without cancelling any previous request.
+
+20. What is JWT Authentication?
+-------------------------------
+JWT (JSON Web Token) Authentication is a token-based authentication mechanism used to securely identify and authorize users. After successful login, the server generates a signed JWT token, which the client stores and sends with every subsequent request in the Authorization header.
 
 
 Explain Angular Architecture.?
