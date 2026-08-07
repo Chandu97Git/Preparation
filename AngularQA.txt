@@ -1,3 +1,200 @@
+1. What is SPA (Single Page Application)?
+-----------------------------------------
+SPA stands for Single Page Application. It is a web application that loads a single HTML page initially, and instead of reloading the entire page during navigation, it dynamically updates only the required content. Angular achieves this using the Angular Router and router-outlet, resulting in a faster and smoother user experience.
+
+2. What is Angular?
+--------------------
+Angular is a TypeScript-based open-source front-end framework developed by Google for building scalable Single Page Applications. It follows a component-based architecture and provides built-in features such as routing, dependency injection, forms, HTTP client, and RxJS, making it suitable for enterprise applications.
+
+3. Component Lifecycle Hooks
+-------------------------------
+Lifecycle hooks are predefined methods that Angular calls at different stages of a component's lifecycle, from creation to destruction. They allow us to execute logic at specific moments, such as initializing data, responding to input changes, or cleaning up resources.
+
+constructor() => ngOnChanges() =>  ngOnInit() =>  ngDoCheck()  => ngAfterContentInit() =>  ngAfterContentChecked()  => ngAfterViewInit()  => ngAfterViewChecked() =>  ngOnDestroy()
+
+❓Component Lifecycle [Explain Lifecycle Hooks]
+---------------------------------------------------
+✅ Answer: Lifecycle hooks are methods that allow us to tap into different stages of a component's lifecycle.
+
+Hook,                  Timing,                                                                 Common Use Case
+ngOnChanges(),     Called before ngOnInit and whenever an @Input() property changes.,      Reacting to data passed in from a parent component.
+ngOnInit(),        Called once after the first ngOnChanges.,                               "Initializing logic, fetching data from an API, or setting up variables."
+ngDoCheck(),       Called during every change detection run.,                              Custom change detection logic that Angular can't catch automatically.
+ngAfterViewInit(), Called after the component's views and child views are initialized.,    Accessing DOM elements via @ViewChild.
+ngOnDestroy(),     Called just before Angular destroys the component.,                     Cleanup: unsubscribing from Observables or detaching event listeners to avoid memory leaks.
+
+import { Component, OnInit, OnDestroy } from '@angular/core';
+
+@Component({
+  selector: 'app-timer',
+  template: `<p>Check the console!</p>`
+})
+export class TimerComponent implements OnInit, OnDestroy {
+
+  constructor() {
+    console.log('1. Constructor: Class is instantiated.');
+  }
+
+  ngOnInit() {
+    console.log('2. ngOnInit: Component is initialized and data-bound properties are ready.');
+    // Perfect place for API calls
+  }
+
+  ngOnDestroy() {
+    console.log('3. ngOnDestroy: Cleaning up before the component disappears.');
+    // Stop timers or unsubscribe here
+  }
+}
+
+4. Component Communication
+---------------------------
+Component communication is the process of sharing data between Angular components.
+
+Types of Component Communication
+--------------------------------
+| Method                          | Used Between                               |
+| ------------------------------- | ------------------------------------------ |
+| @Input()                        | Parent → Child                             |
+| @Output()                       | Child → Parent                             |
+| ViewChild                       | Parent → Child (Access methods/properties) |
+| Service with RxJS               | Unrelated Components                       |
+| State Management (NgRx/Signals) | Large Applications                         |
+
+1. Parent to Child using @Input()  => We use @Input() whenever the parent component wants to send data to a child component. Angular binds the parent property to the child's input 
+property through property binding.
+
+Parent Component
+------------------
+parent.component.ts
+export class ParentComponent {
+  message = "Welcome to Angular";
+}
+
+parent.component.html
+<app-child [msg]="message"></app-child>
+
+Child Component
+---------------
+import { Component, Input } from '@angular/core';
+
+@Component({
+ selector:'app-child',
+ template:`<h2>{{msg}}</h2>`
+})
+
+export class ChildComponent{
+ @Input() msg!: string;
+}
+
+2. Child to Parent using @Output() => @Output() is used when the child component wants to communicate with its parent. It uses EventEmitter to emit custom events.
+
+Child Component
+---------------
+import { Output, EventEmitter } from '@angular/core';
+
+export class ChildComponent{
+ @Output() notify = new EventEmitter<string>();
+ sendData(){
+   this.notify.emit("Data Saved Successfully");
+ }
+}
+HTML
+-------
+<button (click)="sendData()">
+Save
+</button>
+
+Parent Component
+----------------
+<app-child
+(notify)="receiveMessage($event)">
+</app-child>
+
+receiveMessage(message:string){
+   alert(message);
+}
+
+3. Parent Accessing Child using ViewChild => Sometimes the parent needs to call a child's function directly.
+ViewChild is used when the parent wants direct access to a child component, directive, or DOM element after the view has been initialized.
+Child
+------
+export class ChildComponent{
+ resetForm(){
+   console.log("Form Reset");
+ }
+}
+
+Parent
+-------
+@ViewChild(ChildComponent)
+child!: ChildComponent;
+reset(){
+   this.child.resetForm();
+}
+
+HTML
+-----
+<app-child></app-child>
+<button (click)="reset()">
+Reset
+</button>
+
+4. Communication Between Unrelated Components (Service + RxJS)
+When two components are unrelated, we use a shared service with RxJS Subject or BehaviorSubject to exchange data.
+
+| Subject                   | BehaviorSubject                               |
+| ------------------------- | --------------------------------------------- |
+| No initial value          | Requires initial value                        |
+| Doesn't replay last value | Replays last emitted value to new subscribers |
+| Good for events           | Good for application state                    |
+
+private user = new BehaviorSubject<string>("Guest");
+
+5. Data Binding
+---------------
+Data binding is a mechanism that synchronizes data between the component class and the HTML template. It enables Angular to automatically reflect changes between the application logic and the user interface.
+
+| Binding Type     | Syntax                | Direction        | Used For                                              |
+| ---------------- | --------------------- | ---------------- | ----------------------------------------------------- |
+| Interpolation    | `{{value}}`           | Component → View | Display text                                          |
+| Property Binding | `[property]="value"`  | Component → View | Set DOM properties (`src`, `disabled`, `value`, etc.) |
+| Event Binding    | `(event)="method()"`  | View → Component | Handle user events                                    |
+| Two-Way Binding  | `[(ngModel)]="value"` | Both             | Synchronize form inputs                               |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Explain Angular Architecture.?
 -------------------------------
 Angular follows a component-based architecture where the application is divided into reusable components. When a user opens the application, the browser first loads index.html, which contains the root selector. Then main.ts bootstraps the application, application providers are initialized, and the root component is created. The router checks the current URL and loads the corresponding component inside router-outlet. Components interact with services for business logic, services communicate with the backend using HttpClient, and Angular updates the UI automatically when data changes.
@@ -85,39 +282,7 @@ JavaScript dependency
 --------------------
 Angular is a TypeScript-based front-end framework developed by Google for building scalable Single Page Applications. It follows a component-based architecture where the application is divided into reusable components. Angular provides built-in features such as routing, dependency injection, forms, HTTP client, directives, pipes, and RxJS, making it suitable for enterprise applications.
 
-❓ 3. Component Lifecycle [Explain Lifecycle Hooks]
----------------------------------------------------
-✅ Answer: Lifecycle hooks are methods that allow us to tap into different stages of a component's lifecycle.
 
-Hook,                  Timing,                                                                 Common Use Case
-ngOnChanges(),     Called before ngOnInit and whenever an @Input() property changes.,      Reacting to data passed in from a parent component.
-ngOnInit(),        Called once after the first ngOnChanges.,                               "Initializing logic, fetching data from an API, or setting up variables."
-ngDoCheck(),       Called during every change detection run.,                              Custom change detection logic that Angular can't catch automatically.
-ngAfterViewInit(), Called after the component's views and child views are initialized.,    Accessing DOM elements via @ViewChild.
-ngOnDestroy(),     Called just before Angular destroys the component.,                     Cleanup: unsubscribing from Observables or detaching event listeners to avoid memory leaks.
-
-import { Component, OnInit, OnDestroy } from '@angular/core';
-
-@Component({
-  selector: 'app-timer',
-  template: `<p>Check the console!</p>`
-})
-export class TimerComponent implements OnInit, OnDestroy {
-
-  constructor() {
-    console.log('1. Constructor: Class is instantiated.');
-  }
-
-  ngOnInit() {
-    console.log('2. ngOnInit: Component is initialized and data-bound properties are ready.');
-    // Perfect place for API calls
-  }
-
-  ngOnDestroy() {
-    console.log('3. ngOnDestroy: Cleaning up before the component disappears.');
-    // Stop timers or unsubscribe here
-  }
-}
 
 What are the Key Features of Angular?
 -------------------------------------
