@@ -88,6 +88,9 @@ Why Should Medpace Hire You?
 ----------------------------
 I have strong experience in building enterprise-level web applications using technologies that match your requirements, including C#, ASP.NET Core, Angular, SQL Server, Entity Framework, Git, and REST APIs. I have worked on applications with large user bases, understand the complete software development lifecycle, and enjoy collaborating with cross-functional teams. I am a quick learner, adaptable to new domains, and excited about contributing to Medpace's mission of developing software that supports clinical research and improves patient outcomes.
 
+Why are you looking for a change from your current role?
+--------------------------------------------------------
+I’m looking for a change because I want to take on more challenging responsibilities and continue growing as a Full Stack Developer. I’ve gained good experience in .NET, ASP.NET Core, SQL Server, and Angular in my current role, and now I’m looking for an opportunity where I can work on larger-scale projects, learn new technologies, and contribute more to the organization. I’m looking for career growth rather than simply changing companies.
 
 
 
@@ -806,8 +809,25 @@ public class DatabaseConnection
 🔹  Static Constructor
 A static constructor in C# is used to initialize static members of a class. It is automatically invoked by the CLR before the first instance is created or any static member is accessed. It executes only once and cannot be called explicitly or accept parameters.
 
+SOLID Principles — Interview Ready
+----------------------------------
+
+| Principle                     | One-line definition                                                                            |
+| ----------------------------- | ---------------------------------------------------------------------------------------------- |
+| **S — Single Responsibility** | **A class should have only one responsibility and one reason to change.**                      |
+| **O — Open/Closed**           | **A class should be open for extension but closed for modification.**                          |
+| **L — Liskov Substitution**   | **A child class should be able to replace its parent class without breaking the application.** |
+| **I — Interface Segregation** | **A class should not be forced to implement methods it does not need.**                        |
+| **D — Dependency Inversion**  | **A class should depend on abstractions rather than concrete implementations.**                |
 
 
+
+| String                                                                      | StringBuilder                                                             |
+| --------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| **String is immutable**, so every modification creates a new string object. | **StringBuilder is mutable**, so modifications happen on the same object. |
+| Best when the string is **not modified frequently**.                        | Best when the string is **modified frequently**.                          |
+| Slower for repeated concatenation.                                          | Faster for repeated concatenation.                                        |
+| Located in `System`.                                                        | Located in `System.Text`.                                                 |
 
 
 OOPS Concepts in C#
@@ -1342,4 +1362,155 @@ using (var con = new SqlConnection(connectionString))
 🔷 Collections, Generics and List
 Collections are used to store multiple objects. Generics provide type safety, and List<T> is a commonly used generic collection for dynamic data storage.
 
+1. STRING vs STRINGBUILDER
+String is immutable, while StringBuilder is mutable and is better for frequent string modifications.
+Remember: String -> Immutable | StringBuilder -> Mutable
+
+2. IEnumerable vs IQueryable
+IEnumerable works mainly with in-memory data, while IQueryable allows queries to be executed by the data source such as a database.
+Remember: IEnumerable -> In Memory | IQueryable -> Database Query
+
+3. var vs dynamic
+var is strongly typed at compile time, while dynamic is resolved at runtime.
+Remember: var -> Compile time | dynamic -> Runtime
+
+4. ref vs out
+ref requires the variable to be initialized before passing, while out does not require initialization but must be assigned inside the method.
+Remember: ref -> Initialize before | out -> Assign inside
+
+5. const vs readonly
+const is a compile-time constant, while readonly can be assigned at declaration or inside a constructor.
+Remember: const -> Compile time | readonly -> Constructor/Runtime
+
+6. ABSTRACT CLASS vs INTERFACE
+An abstract class can contain implemented and abstract members, while an interface mainly defines a contract that implementing classes must follow.
+Remember: Abstract class -> Partial implementation | Interface -> Contract
+
+7. OVERLOADING vs OVERRIDING
+Overloading means methods have the same name with different parameters, while overriding means redefining a parent class's virtual method in a child class.
+Remember: Overloading -> Compile time | Overriding -> Runtime
+
+8. throw vs throw ex
+throw preserves the original stack trace, while throw ex resets the stack trace from the current location.
+Remember: throw -> Preserve stack trace
+
+9. async vs await
+async marks a method as asynchronous, while await waits asynchronously for a Task to complete without blocking the thread.
+Remember: async -> Async method | await -> Wait asynchronously
+
+10. Task vs Thread
+A Thread represents an actual execution thread, while a Task represents an asynchronous operation that can be scheduled on available threads.
+Remember: Thread -> Execution thread | Task -> Async operation
+
+11. Authentication vs Authorization
+Authentication verifies who you are, while authorization determines what you are allowed to access.
+Remember: Authentication -> Who | Authorization -> What
+
+12. Singleton vs Scoped vs Transient
+Singleton creates one instance for the application's lifetime, Scoped creates one instance per request, and Transient creates a new instance each time it is requested.
+Remember: Singleton -> Application | Scoped -> Request | Transient -> Every time
+
+13. PUT vs PATCH
+PUT generally replaces the entire resource, while PATCH partially updates a resource.
+Remember: PUT -> Full update | PATCH -> Partial update
+
+14. DELETE vs TRUNCATE vs DROP
+DELETE removes selected rows, TRUNCATE removes all rows from a table, and DROP removes the table itself.
+Remember: DELETE -> Rows | TRUNCATE -> All rows | DROP -> Table
+
+15. First vs FirstOrDefault
+First returns the first element and throws an exception if no element exists, while FirstOrDefault returns the default value when no element exists.
+Remember: First -> Exception | FirstOrDefault -> Default
+
+16. Single vs SingleOrDefault
+Single expects exactly one matching element and throws if there are zero or multiple elements, while SingleOrDefault allows zero but throws for multiple elements.
+Remember: Single -> Exactly one | SingleOrDefault -> Zero or one
+
+17. Any vs Count
+Any checks whether at least one element exists, while Count counts the number of elements.
+Remember: Any -> Exists? | Count -> How many?
+
+18. Authentication vs Authorization
+Authentication verifies identity, while Authorization checks permissions.
+Remember: Authentication -> Who | Authorization -> Access
+
+19. Dependency Injection vs Dependency Inversion
+Dependency Inversion is a design principle, while Dependency Injection is a technique used to provide dependencies from outside a class.
+Remember: DIP -> Principle | DI -> Technique
+
+20. Tight Coupling vs Loose Coupling
+Tight coupling means classes depend heavily on concrete implementations, while loose coupling means classes depend on abstractions and can be changed independently.
+Remember: Tight -> Highly dependent | Loose -> Less dependent
+
+21. IEnumerable vs ICollection vs IList
+IEnumerable is mainly for iteration, ICollection adds collection operations like Add/Remove, and IList additionally supports index-based access.
+Remember: IEnumerable -> Iterate | ICollection -> Add/Remove | IList -> Index
+
+22. Array vs List
+An array has a fixed size, while a List can dynamically grow or shrink.
+Remember: Array -> Fixed | List -> Dynamic
+
+23. List vs HashSet
+List allows duplicate elements and maintains order, while HashSet stores unique elements and is optimized for membership checks.
+Remember: List -> Duplicates | HashSet -> Unique
+
+24. Dictionary vs Hashtable
+Dictionary<TKey,TValue> is generic and type-safe, while Hashtable is non-generic and stores keys and values as objects.
+Remember: Dictionary -> Generic | Hashtable -> Non-generic
+
+25. ToList vs AsEnumerable
+ToList immediately executes the query and creates a list, while AsEnumerable changes the sequence to IEnumerable and allows subsequent LINQ operations to run as LINQ-to-Objects.
+Remember: ToList -> Execute & Load | AsEnumerable -> Switch to IEnumerable
+
+26. Abstract Class vs Concrete Class
+An abstract class cannot be instantiated directly, while a concrete class can be instantiated.
+Remember: Abstract -> Cannot create object | Concrete -> Can create object
+
+27. Compile-time vs Runtime Polymorphism
+Method overloading provides compile-time polymorphism, while method overriding provides runtime polymorphism.
+Remember: Overloading -> Compile time | Overriding -> Runtime
+
+28. Encapsulation vs Abstraction
+Encapsulation hides and protects data inside a class, while abstraction hides implementation details and exposes only essential functionality.
+Remember: Encapsulation -> Data hiding | Abstraction -> Implementation hiding
+
+29. Class vs Struct
+A class is a reference type, while a struct is a value type.
+Remember: Class -> Reference | Struct -> Value
+
+30. Method vs Constructor
+A method performs an operation, while a constructor initializes an object when it is created.
+Remember: Method -> Performs | Constructor -> Initializes
+
+31. Middleware vs Filter
+Middleware operates in the HTTP request pipeline, while filters operate within the MVC/controller execution pipeline.
+Remember: Middleware -> HTTP pipeline | Filter -> MVC pipeline
+
+32. MVC vs Web API
+MVC is mainly used to build web applications with views, while Web API is mainly used to expose HTTP endpoints that return data.
+Remember: MVC -> Views | Web API -> Data/API
+
+33. GET vs POST
+GET is mainly used to retrieve data, while POST is mainly used to submit data or create a new resource.
+Remember: GET -> Read | POST -> Create/Submit
+
+34. DELETE vs POST
+DELETE is used to remove a resource, while POST is generally used to create or submit data.
+Remember: DELETE -> Remove | POST -> Create/Submit
+
+35. WHERE vs HAVING
+WHERE filters rows before grouping, while HAVING filters groups after GROUP BY.
+Remember: WHERE -> Before grouping | HAVING -> After grouping
+
+36. INNER JOIN vs LEFT JOIN
+INNER JOIN returns matching records from both tables, while LEFT JOIN returns all records from the left table and matching records from the right table.
+Remember: INNER -> Matching only | LEFT -> Everything from left
+
+37. Primary Key vs Foreign Key
+A primary key uniquely identifies a record, while a foreign key establishes a relationship with another table's primary key.
+Remember: Primary -> Identify | Foreign -> Relate
+
+38. UNION vs UNION ALL
+UNION combines results and removes duplicates, while UNION ALL combines results without removing duplicates.
+Remember: UNION -> No duplicates | UNION ALL -> Keeps duplicates
 
