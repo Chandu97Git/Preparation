@@ -199,7 +199,7 @@ CREATE TABLE StudentCourses (
     course_id INT,
     PRIMARY KEY (student_id, course_id)
 );
-🔹 2. Composite Primary Key (Important 🔥)
+✅ 2. Composite Primary Key (Important 🔥)
 A primary key can be a single column or a combination of columns (composite key). Composite keys are used when one column is not sufficient to uniquely identify a record.
 👉 When one column is NOT enough, we combine multiple columns to uniquely identify a record.
 
@@ -220,7 +220,7 @@ CREATE TABLE Employees (
     dept_id INT,
     FOREIGN KEY (dept_id) REFERENCES Departments(id)
 );
-🔹 Why Foreign Key is Important?
+✅ Why Foreign Key is Important?
 
 ✔ Maintains data integrity
 ✔ Prevents invalid data (e.g., dept_id that doesn't exist)
@@ -253,7 +253,7 @@ INNER JOIN Departments d
 ON e.dept_id = d.id;
 
 🔥 Types of JOINs
-🔹 1. INNER JOIN 👉 Returns only matching records
+✅ 1. INNER JOIN 👉 Returns only matching records
 ✔ Common data only
 
 SELECT e.name, d.dept_name
@@ -261,7 +261,7 @@ FROM Employees e
 INNER JOIN Departments d 
 ON e.dept_id = d.id;
 
-🔹 2. LEFT JOIN (LEFT OUTER JOIN)
+✅ 2. LEFT JOIN (LEFT OUTER JOIN)
 👉 Returns:
 All records from left table
 Matching from right
@@ -272,7 +272,7 @@ FROM Employees e
 LEFT JOIN Departments d 
 ON e.dept_id = d.id;
 
-🔹 3. RIGHT JOIN
+✅ 3. RIGHT JOIN
 👉 RIGHT JOIN returns:
 All records from the right table
 Matching records from the left table
@@ -283,7 +283,7 @@ FROM Employees e
 RIGHT JOIN Departments d
 ON e.dept_id = d.id;
 
-🔹 4. FULL JOIN
+✅ 4. FULL JOIN
 👉 Returns:
 All records from both tables
 Non-matching → NULL
@@ -295,7 +295,7 @@ FROM Employees e
 FULL JOIN Departments d 
 ON e.dept_id = d.id;
 
-🔹 7. Self JOIN (Tricky 🔥)
+✅ 7. Self JOIN (Tricky 🔥)
 👉 Question:
 Find employees and their managers.
 SELECT e.name AS Employee, m.name AS Manager
