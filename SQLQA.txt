@@ -97,7 +97,7 @@ SELECT DISTINCT Department FROM Employee;
 | Removes duplicates    | Groups rows                     |
 | No aggregation needed | Often used with COUNT, SUM, AVG |
 
-What is TOP? 
+✅ What is TOP? 
 Returns the first N rows.
 SELECT TOP 3 * FROM Employee;
 SELECT TOP 1 * FROM Employee ORDER BY Salary DESC;
@@ -105,13 +105,13 @@ SELECT TOP 1 * FROM Employee ORDER BY Salary DESC;
 TOP 1
 Returns the complete row (when ordered appropriately).
 
-MAX()
+✅ MAX()
 Returns only the maximum value.
 
-What is Alias?
+✅ What is Alias?
 Alias gives a temporary name to a column or table.
 
-Execution Order of a SQL Query
+✅ Execution Order of a SQL Query
 This is a very common interview question. Although we write the query in one order, SQL Server processes it in a different order.
 
 | Written Order | Execution Order              |
@@ -141,20 +141,21 @@ What are Aggregate Functions?
 -----------------------------
 Aggregate functions perform calculations on multiple rows and return a single value.
 
-What is COUNT()?
+✅ What is COUNT()?
 COUNT() counts the number of rows.
 
 select COUNT(*) from employee 
 select COUNT(salary) from employee
 
-What is SUM()?
+✅ What is SUM()?
 Returns the total of a numeric column.
+SELECT SUM(Salary) FROM Employee WHERE Department='IT';
 
-Can SUM() be used on a VARCHAR column?
+✅ Can SUM() be used on a VARCHAR column?
 No. It works only with numeric data types like INT, DECIMAL, FLOAT, etc.
 select SUM(salary) from EMP_DATA
 
-What is AVG()?
+✅ What is AVG()?
 Returns the average value.
 select AVG(salary) from EMP_DATA
 
@@ -166,26 +167,7 @@ Difference between COUNT(*) and COUNT(column)?
 | ---------------- | --------------------------- |
 | Counts every row | Counts only non-NULL values |
 
-What is SUM()?
-Returns the total of a numeric column.
-SELECT SUM(Salary) FROM Employee WHERE Department='IT';
-
-Can SUM() be used on a VARCHAR column?
-No. It works only with numeric data types like INT, DECIMAL, FLOAT, etc.
-
-What is AVG()?
-Returns the average value.
-SELECT AVG(Salary) FROM Employee;
-
-What is MAX()?
-Returns the highest value.
-SELECT MAX(Salary) FROM Employee;
-SELECT MAX(OrderDate)  FROM Orders;
-
-Can MAX() work on strings?
-Yes.
-
-What is MIN()?
+✅ What is MIN()?
 Returns the smallest value.
 SELECT MIN(Salary) FROM Employee;
 
@@ -197,7 +179,7 @@ MAX(Salary) AS HighestSalary,
 MIN(Salary) AS LowestSalary
 FROM Employee;
 
-What is GROUP BY?
+✅ What is GROUP BY?
 GROUP BY groups rows having the same value into one group.
 
 
