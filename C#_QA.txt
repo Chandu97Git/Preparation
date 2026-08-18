@@ -1109,95 +1109,69 @@ Can access members
 
 What is the difference between an Interface and an Abstract Class?
 -------------------------------------------------------------------
-An interface defines a contract. It specifies what methods a class must implement but doesn't provide shared implementation. We typically use interfaces for Dependency Injection and when unrelated classes need the same capability. For example, INotification can be implemented by EmailNotification, SmsNotification, and PushNotification, each with its own Send() implementation.
-
-An abstract class is used when multiple related classes share common state or behavior. It can contain both implemented and abstract methods. For example, in a payment system, all payment types can inherit from an abstract Payment class that provides a common PrintReceipt() method, while each payment type implements its own MakePayment() logic.
-
-Abstract Class
---------------
-using System;
-
-public abstract class Payment
-{
-    // Common implementation
-    public void PrintReceipt()
-    {
-        Console.WriteLine("Receipt Printed Successfully.");
-    }
-
-    // Different implementation for each payment type
-    public abstract void MakePayment(decimal amount);
-}
-
-public class CreditCardPayment : Payment
-{
-    public override void MakePayment(decimal amount)
-    {
-        Console.WriteLine($"Paid ₹{amount} using Credit Card");
-    }
-}
-
-public class UpiPayment : Payment
-{
-    public override void MakePayment(decimal amount)
-    {
-        Console.WriteLine($"Paid ₹{amount} using UPI");
-    }
-}
-
-class Program
-{
-    static void Main()
-    {
-        Payment payment = new CreditCardPayment();
-
-        payment.MakePayment(500);
-
-        payment.PrintReceipt();
-    }
-}
-
-Interface Example
+An interface is mainly used to define a contract, whereas an abstract class is used to provide a common base class with both abstract and concrete members.
+A class can implement multiple interfaces but can inherit only one abstract or concrete class. 
+Abstract classes can have fields, constructors, and implemented methods, while interfaces are mainly used to define capabilities or contracts.
+Interface defines a contract — what a class should do.
+Abstract class provides a common base — what a class is and what common behavior it has.
+1. Interface Example
+--------------------
+Here:
+IPayment
+   ↓
 -----------------
+|               |
+CreditCard     UPI
+Both classes must implement Pay().
+The interface says: Any payment class must provide Pay().
 
-using System;
-
-public interface INotification
+interface IPayment
 {
-    void Send();
+    void Pay();
 }
 
-public class EmailNotification : INotification
+class CreditCardPayment : IPayment
 {
-    public void Send()
+    public void Pay()
     {
-        Console.WriteLine("Email Sent");
+        Console.WriteLine("Payment using Credit Card");
     }
 }
 
-public class SmsNotification : INotification
+class UpiPayment : IPayment
 {
-    public void Send()
+    public void Pay()
     {
-        Console.WriteLine("SMS Sent");
+        Console.WriteLine("Payment using UPI");
     }
 }
 
-public class PushNotification : INotification
+2. Abstract Class Example
+-------------------------
+Here Employee provides:
+Common property → Name
+Common method → Login()
+Mandatory method → CalculateSalary()
+
+So an abstract class can contain both implemented and unimplemented behavior.
+
+abstract class Employee
 {
-    public void Send()
+    public string Name { get; set; }
+
+    public void Login()
     {
-        Console.WriteLine("Push Notification Sent");
+        Console.WriteLine("Employee Login");
     }
+
+    public abstract void CalculateSalary();
 }
 
-class Program
+class Developer : Employee
 {
-    static void Main()
+    public override void CalculateSalary()
     {
-        INotification notify = new EmailNotification();
-
-        notify.Send();
+        Console.WriteLine("Developer salary calculation");
     }
 }
 
