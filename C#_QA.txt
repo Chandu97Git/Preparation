@@ -832,6 +832,8 @@ SOLID Principles — Interview Ready
 
 OOPS Concepts in C#
 -------------------
+Object-Oriented Programming (OOP) in C# is a programming paradigm that organizes code into objects, which contain data (fields/properties) and behavior (methods). OOP makes programs easier to develop, maintain, and reuse.
+
 🔷 Encapsulation: 
 Encapsulation means hiding the internal details of an object and exposing only what’s necessary.
 We can achieve this using access modifiers like private, public, protected, and internal, along with properties and methods.
@@ -841,6 +843,10 @@ Encapsulation is the process of binding data (variables) and methods (functions)
 ----------------------
 Because it hides internal implementation and prevents unauthorized access to data.
 Benefits  ===>   Security, Validation, Maintainability
+Benefits:
+Protects data from unauthorized access.
+Prevents accidental modification.
+Makes code more secure.
 
 | Access Modifier      | Same Class  | Child (Same Assembly)    | Child (Different Assembly)  | Unrelated (Same Assembly)   | Unrelated (Different Assembly) |
 | -------------------- | :--------:  | :-------------------:    | :------------------------:  | :-----------------------:   | :----------------------------: |
@@ -898,6 +904,11 @@ This approach ensures controlled access to data and prevents invalid values from
 🔷 Inheritance:
 -----------------
 Inheritance allows a class (child/derived) to inherit fields and methods from another class (parent/base), promoting code reuse and hierarchical relationships.
+Benefits:
+---------
+Code reuse.
+Easier maintenance.
+Creates hierarchical relationships.
 
 using System;
 public class Person
@@ -946,7 +957,8 @@ Hybrid Inheritance : Combination of two or more inheritance types
 
 🔷 Polymorphism:
 -----------------
-Polymorphism means one method can have multiple forms. It is of two types: compile-time and runtime polymorphism. 
+Polymorphism means one method can have multiple forms.The same method name can behave differently depending on the object.
+It is of two types: compile-time and runtime polymorphism. 
 Compile-time polymorphism is achieved using method overloading, where the same method name has different parameters.
 Runtime polymorphism is achieved using method overriding, where a child class provides a different implementation of a parent class method using virtual and override keywords.
 using System;
