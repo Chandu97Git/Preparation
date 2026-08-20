@@ -1191,6 +1191,47 @@ The Stack is used to store local variables, method parameters, and references to
 
 The Heap is used to store the actual objects created using the new keyword, such as class instances, arrays, collections, and strings. Heap memory is larger than stack memory, and objects remain there until they are no longer referenced and are removed by the Garbage Collector.
 
+What is a Delegate?
+-------------------
+A delegate is a type-safe reference to a method. It allows us to pass methods as parameters and is commonly used for callbacks, events, and functional programming features such as Func, Action, and Predicate.
+using System;
+
+class Program
+{
+    public delegate void NotificationDelegate(string message);
+
+    public static void SendEmail(string message)
+    {
+        Console.WriteLine("Email Sent: " + message);
+    }
+
+    public static void SendSMS(string message)
+    {
+        Console.WriteLine("SMS Sent: " + message);
+    }
+
+    public static void SendWhatsApp(string message)
+    {
+        Console.WriteLine("WhatsApp Sent: " + message);
+    }
+
+    static void Main()
+    {
+        NotificationDelegate notify;
+
+        notify = SendEmail;
+        notify += SendSMS;
+        notify += SendWhatsApp;
+
+        notify("Employee registered successfully");
+    }
+}
+
+What is an Event?
+-----------------
+An event is a notification mechanism based on delegates. It allows one class to notify other classes when something happens. We use += to subscribe and -= to unsubscribe from an event.
+
+
 What is Garbage Collection?
 ----------------------------
 Garbage Collection is a process where the CLR automatically removes objects from the heap that are no longer being used.
