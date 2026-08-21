@@ -1194,8 +1194,8 @@ The Heap is used to store the actual objects created using the new keyword, such
 What is a Delegate?
 -------------------
 A delegate is a type-safe reference to a method. It allows us to pass methods as parameters and is commonly used for callbacks, events, and functional programming features such as Func, Action, and Predicate.
-using System;
 
+using System;
 class Program
 {
     public delegate void NotificationDelegate(string message);
@@ -1230,6 +1230,9 @@ class Program
 What is an Event?
 -----------------
 An event is a notification mechanism based on delegates. It allows one class to notify other classes when something happens. We use += to subscribe and -= to unsubscribe from an event.
+
+
+
 
 
 What is Garbage Collection?
