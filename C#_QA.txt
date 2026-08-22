@@ -30,7 +30,7 @@ I have good knowledge of Object-Oriented Programming, ASP.NET Core, Web API, Ent
 
 What I enjoy most is solving real-world business problems, learning new technologies, and continuously improving application performance and user experience.
 
-I am now looking for an opportunity like Medpace where I can work on global products, enhance my technical skills, and contribute to software that has a meaningful impact on healthcare and clinical research.
+I am now looking for an opportunity like GEP where I can work on global products, enhance my technical skills, and contribute to software that has a meaningful impact on healthcare and clinical research.
 
 2. Explain Your Current Project (APSCHE Web-Based Admission System)
 -----------------------------------
