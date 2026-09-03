@@ -1,3 +1,54 @@
+Explain .NET Core architecture
+------------------------------
+.NET Core, now called modern .NET, follows a modular and layered architecture. 
+When a client sends an HTTP request, Kestrel receives it and passes it through the ASP.NET Core middleware pipeline. 
+Middleware handles concerns such as exception handling, authentication, authorization, logging and routing. Routing identifies the appropriate controller. 
+The controller receives the request and calls the service layer, where business logic is implemented. 
+The service layer communicates with the repository or data-access layer, which interacts with the database using technologies such as Entity Framework Core, Dapper or ADO.NET. 
+The result then travels back through the layers and is returned to the client. 
+ASP.NET Core also provides built-in Dependency Injection, which helps us loosely couple these components and makes the application easier to test and maintain.
+
+What is Dependency Injection in .NET Core? Why do we use it, and what are the three service lifetimes (Transient, Scoped, and Singleton)?
+------------------------------------------------------------------------------------------------------------------------------------------
+Dependency Injection is a design pattern used to provide the dependencies required by a class from outside, instead of the class creating those dependencies itself.
+In .NET Core, Dependency Injection helps us achieve loose coupling, better maintainability, testability, and easier replacement of implementations.
+There are three main service lifetimes:
+1. **Transient** – A new instance is created every time the service is requested. It is generally used for lightweight, stateless services.
+2. **Scoped** – One instance is created per HTTP request. All components that request that service within the same request get the same instance. `DbContext` is commonly registered as scoped.
+3. **Singleton** – A single instance is created and reused throughout the application's lifetime. It is suitable for services that are stateless and safe to share across requests.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 🔹 What is WebApplicationBuilder and WebApplication?
 A) WebApplicationBuilder is used to configure services and settings, while WebApplication is the built application used to define middleware and handle HTTP requests.
 
