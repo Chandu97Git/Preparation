@@ -17,6 +17,11 @@ There are three main service lifetimes:
 2. **Scoped** – One instance is created per HTTP request. All components that request that service within the same request get the same instance. `DbContext` is commonly registered as scoped.
 3. **Singleton** – A single instance is created and reused throughout the application's lifetime. It is suitable for services that are stateless and safe to share across requests.
 
+| Lifetime      | Instance created              | Common usage                             |
+| ------------- | ----------------------------- | ---------------------------------------- |
+| **Transient** | Every time requested          | Lightweight/stateless services           |
+| **Scoped**    | Once per HTTP request         | DbContext, Repository, Business Services |
+| **Singleton** | Once for application lifetime | Shared cache, application-wide services  |
 
 
 
