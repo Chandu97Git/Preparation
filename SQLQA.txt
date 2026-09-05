@@ -322,4 +322,10 @@ FROM Employees
 GROUP BY dept_id
 HAVING SUM(salary) > 100000;
 
+Subquery vs JOIN?
+-----------------
+A JOIN combines tables directly. A subquery is a nested query used to produce a value/set or test existence.
+
+CTE — Common Table Expression ⭐⭐⭐
+A CTE is a temporary named result set that exists only for the duration of a single statement.
 
