@@ -95,7 +95,7 @@ I’m looking for a change because I want to take on more challenging responsibi
 
 
 🔹 Class:
--------------
+----------
 👉 "A class in C# is a blueprint used to create objects. It contains properties and methods that define the data and behavior of an object."
 
 🔹 Simple Definition
@@ -1230,9 +1230,6 @@ class Program
 What is an Event?
 -----------------
 An event is a notification mechanism based on delegates. It allows one class to notify other classes when something happens. We use += to subscribe and -= to unsubscribe from an event.
-
-
-
 
 
 What is Garbage Collection?
