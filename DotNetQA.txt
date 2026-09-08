@@ -1,3 +1,8 @@
+Q1. What is .NET Core?
+-----------------------
+Answer:
+.NET Core is a cross-platform, open-source framework from Microsoft used to build web applications, APIs, microservices, and other applications. It supports Windows, Linux, and macOS and provides features such as dependency injection, middleware, configuration, logging, and high-performance web development through ASP.NET Core.
+
 Explain .NET Core architecture
 ------------------------------
 .NET Core, now called modern .NET, follows a modular and layered architecture. 
