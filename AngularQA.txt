@@ -1,10 +1,12 @@
 1. What is SPA (Single Page Application)?
 -----------------------------------------
-SPA stands for Single Page Application. It is a web application that loads a single HTML page initially, and instead of reloading the entire page during navigation, it dynamically updates only the required content. Angular achieves this using the Angular Router and router-outlet, resulting in a faster and smoother user experience.
+SPA stands for Single Page Application. It is a web application that loads a single HTML page initially, and instead of reloading the entire page during navigation, it dynamically updates only the required content. 
+Angular achieves this using the Angular Router and router-outlet, resulting in a faster and smoother user experience.
 
 2. What is Angular?
 --------------------
-Angular is a TypeScript-based open-source front-end framework developed by Google for building scalable Single Page Applications. It follows a component-based architecture and provides built-in features such as routing, dependency injection, forms, HTTP client, and RxJS, making it suitable for enterprise applications.
+Angular is a TypeScript-based open-source front-end framework developed by Google for building scalable Single Page Applications. 
+It follows a component-based architecture and provides built-in features such as routing, dependency injection, forms, HTTP client, and RxJS, making it suitable for enterprise applications.
 
 3. Component Lifecycle Hooks
 -------------------------------
@@ -498,6 +500,7 @@ export class GreetComponent {
     alert(`Hello, ${this.userName}!`);
   }
 }
+
 Why use Components?
 Using a component-based architecture provides several major benefits:
 
