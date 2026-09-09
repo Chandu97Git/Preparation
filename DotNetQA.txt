@@ -28,6 +28,12 @@ There are three main service lifetimes:
 | **Scoped**    | Once per HTTP request         | DbContext, Repository, Business Services |
 | **Singleton** | Once for application lifetime | Shared cache, application-wide services  |
 
+How do you implement custom middleware?
+---------------------------------------
+In ASP.NET Core, I create a middleware class that accepts a RequestDelegate in its constructor and implements an InvokeAsync method with HttpContext.
+I can execute logic before calling _next(context), then pass the request to the next middleware, and execute additional logic after it returns.
+I register the middleware in Program.cs using app.UseMiddleware<T>(). 
+In my projects, I can use custom middleware for global exception handling, request logging, correlation IDs, or auditing.
 
 
 
