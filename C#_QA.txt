@@ -1087,6 +1087,11 @@ Instance of class
 Memory allocated
 Can access members
 
+What is the difference between a class and an object?
+A class is a blueprint or template that defines properties and methods, whereas an object is an instance of that class created at runtime. 
+We can create multiple objects from a single class, and each object maintains its own instance state.
+
+
 🔷 Difference between Overloading and Overriding
 ------------------------------------------------
 
