@@ -1,1 +1,29 @@
+what is router-outlet
+---------------------
+router-outlet is a directive provided by Angular Router that acts as a placeholder for routed components. 
+Based on the current URL and route configuration, Angular dynamically renders the corresponding component inside the router outlet. 
+It allows us to navigate between components without reloading the entire page, which is an important part of Angular's SPA architecture. 
+For example, in my application I keep the Header and Footer outside the router outlet, while Login, Dashboard, Profile, and other pages are dynamically rendered inside it.
 
+How did you fix the footer positioning issue in your Angular application?
+------------------------------------------------------------------------
+app.html
+--------
+<div class="app-container">
+  <app-header></app-header>
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+  <app-footer></app-footer>
+</div>
+app.css
+------
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
