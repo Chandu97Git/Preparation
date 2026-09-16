@@ -1,7 +1,27 @@
+How did you implement JWT authentication in your project?
+---------------------------------------------------------
+In our application, we had multiple APIs that needed to be secured. So I implemented JWT-based authentication.
 
+First, the user provides their login credentials from the Angular application. The request goes to the login API. In the backend, we validate the credentials against the database.
 
+If the credentials are valid, we generate a JWT token containing claims such as the user ID and role. We sign the token using a secret key configured in appsettings.
 
+The Angular application receives the token and stores it. For subsequent API calls, we use an HTTP interceptor to attach the token to the Authorization header as a Bearer token.
 
+On the .NET side, JWT Bearer authentication middleware validates the token — including the signature, issuer, audience and expiration.
+
+Once the token is validated, the user's claims become available through HttpContext.User.
+
+For authorization, we use role-based authorization so that, for example, an admin API cannot be accessed by a normal user.
+
+Where exactly is the JWT token generated?
+-----------------------------------------
+It is generated in the login/authentication service after successful credential validation. We create claims, create signing credentials using the configured secret key, create a JwtSecurityToken with issuer, audience and expiration, and then serialize it using JwtSecurityTokenHandler.
+
+What happens after Angular sends the token?
+-------------------------------------------
+The request first goes through the ASP.NET Core middleware pipeline. JWT Bearer authentication extracts the token from the Authorization header and validates it.
+If valid, the authenticated user's claims are populated into HttpContext.User. Then authorization policies or roles are checked before the controller action executes.
 
 
 
