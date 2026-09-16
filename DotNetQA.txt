@@ -14,6 +14,8 @@ Once the token is validated, the user's claims become available through HttpCont
 
 For authorization, we use role-based authorization so that, for example, an admin API cannot be accessed by a normal user.
 
+Login → Validate credentials → Generate JWT → Angular receives token → Interceptor attaches token → Middleware validates token → Controller executes → Authorization checks role.
+
 Where exactly is the JWT token generated?
 -----------------------------------------
 It is generated in the login/authentication service after successful credential validation. 
