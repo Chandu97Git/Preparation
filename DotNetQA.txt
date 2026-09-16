@@ -1,3 +1,60 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Q1. What is .NET Core?
 -----------------------
 Answer:
@@ -34,36 +91,6 @@ In ASP.NET Core, I create a middleware class that accepts a RequestDelegate in i
 I can execute logic before calling _next(context), then pass the request to the next middleware, and execute additional logic after it returns.
 I register the middleware in Program.cs using app.UseMiddleware<T>(). 
 In my projects, I can use custom middleware for global exception handling, request logging, correlation IDs, or auditing.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 🔹 What is WebApplicationBuilder and WebApplication?
 A) WebApplicationBuilder is used to configure services and settings, while WebApplication is the built application used to define middleware and handle HTTP requests.
