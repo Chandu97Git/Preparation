@@ -1,9 +1,20 @@
-✅ What is SQL?
+`✅ What is SQL?
 SQL is a standard language used to interact with relational databases. It helps in storing, retrieving, updating, and managing data efficiently
 SQL is used to communicate with databases to perform operations like:Insert data, Retrieve data, Update data, Delete data
 
 ✅ What is a Relational Database?
 A Relational Database is a type of database that stores data in the form of tables (rows and columns) and maintains relationships between those tables using keys.
+
+Components of a SQL System
+-------------------------
+Database : A structured collection of data stored in tables with rows and columns.
+Tables   : Store data and apply rules to keep it accurate and consistent.
+Indexes  : Help the database find data faster without scanning the whole table.
+Views    : Virtual tables created from SELECT queries for easy access to data.
+Stored Procedures : Pre-saved SQL code that runs tasks and improves performance and security.
+Transactions   : Group of SQL actions that either all succeed or all fail to keep data safe.
+Security & Permissions: Control who can view, change or manage database data.
+Joins: Combine data from different tables based on relationships.
 
 🔹 What Can SQL Do?
 Create databases and tables
