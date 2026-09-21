@@ -1,3 +1,10 @@
+Query String vs Route Data
+--------------------------
+Query string and route data are both mechanisms for passing values to an API. 
+Query string parameters are passed after the ? and are generally used for optional criteria such as filtering, searching, sorting, and pagination.
+Route data is part of the URL path and is generally used to identify a specific resource. In ASP.NET Core, we can explicitly bind them using [FromQuery] and [FromRoute].
+
+
 How did you implement JWT authentication in your project?
 ---------------------------------------------------------
 In our application, we had multiple APIs that needed to be secured. So I implemented JWT-based authentication.
@@ -25,58 +32,6 @@ What happens after Angular sends the token?
 -------------------------------------------
 The request first goes through the ASP.NET Core middleware pipeline. JWT Bearer authentication extracts the token from the Authorization header and validates it.
 If valid, the authenticated user's claims are populated into HttpContext.User. Then authorization policies or roles are checked before the controller action executes.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Q1. What is .NET Core?
 -----------------------
