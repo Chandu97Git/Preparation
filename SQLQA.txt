@@ -1,3 +1,211 @@
+1. What is a JOIN?
+A JOIN is used to combine data from two or more tables based on a related column. For example, if I have Employees and Departments tables, I can join them using DepartmentId to retrieve employee and department information together.
+Common joins are INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL OUTER JOIN.
+
+2. Explain INNER JOIN, LEFT JOIN, RIGHT JOIN and FULL OUTER JOIN.
+INNER JOIN
+Returns only the records that have matching values in both tables.
+
+SELECT e.EmployeeName, d.DepartmentName
+FROM Employees e
+INNER JOIN Departments d
+    ON e.DepartmentId = d.DepartmentId;
+
+LEFT JOIN
+Returns all records from the left table and matching records from the right table. If there is no match, the right-side columns return NULL.
+
+RIGHT JOIN
+Returns all records from the right table and matching records from the left table.
+
+FULL OUTER JOIN
+Returns matching records as well as unmatched records from both tables.
+
+3. INNER JOIN vs LEFT JOIN
+INNER JOIN returns only matching records, whereas LEFT JOIN returns all records from the left table, including those that don't have a match in the right table.
+
+4. What is a SELF JOIN?
+A self join is when a table is joined with itself. It is commonly used for hierarchical relationships, such as an employee and their manager when both are stored in the same Employees table.
+
+SELECT e.EmployeeName,
+       m.EmployeeName AS ManagerName
+FROM Employees e
+LEFT JOIN Employees m
+    ON e.ManagerId = m.EmployeeId;
+
+5. Find employees who don't have a department.
+SELECT e.*
+FROM Employees e
+LEFT JOIN Departments d
+    ON e.DepartmentId = d.DepartmentId
+WHERE d.DepartmentId IS NULL;
+
+I use a LEFT JOIN and filter where the department key is NULL. This gives employees for whom no matching department exists.
+
+6. Find departments that don't have employees.
+SELECT d.*
+FROM Departments d
+LEFT JOIN Employees e
+    ON d.DepartmentId = e.DepartmentId
+WHERE e.EmployeeId IS NULL;
+
+7. What is GROUP BY?
+GROUP BY groups rows having the same values so that aggregate functions such as COUNT, SUM, AVG, MIN, and MAX can be applied to each group.
+SELECT DepartmentId,
+       COUNT(*) AS EmployeeCount
+FROM Employees
+GROUP BY DepartmentId;
+
+8. WHERE vs HAVING
+WHERE filters individual rows before grouping, whereas HAVING filters groups after aggregation.
+
+SELECT DepartmentId,
+       COUNT(*) AS EmployeeCount
+FROM Employees
+WHERE Salary > 30000
+GROUP BY DepartmentId
+HAVING COUNT(*) > 5;
+
+9. Find the number of employees in each department.
+SELECT DepartmentId,
+       COUNT(*) AS EmployeeCount
+FROM Employees
+GROUP BY DepartmentId;
+
+10. Find departments having more than 5 employees.
+SELECT DepartmentId,
+       COUNT(*) AS EmployeeCount
+FROM Employees
+GROUP BY DepartmentId
+HAVING COUNT(*) > 5;
+
+11. Find the highest salary in each department.
+SELECT DepartmentId,
+       MAX(Salary) AS HighestSalary
+FROM Employees
+GROUP BY DepartmentId;
+
+12. Find the average salary by department.
+SELECT DepartmentId,
+       AVG(Salary) AS AverageSalary
+FROM Employees
+GROUP BY DepartmentId;
+
+13. What is a subquery?
+A subquery is a query written inside another SQL query. It is useful when the result of one query is required by another query.
+
+
+17. What is EXISTS?
+
+EXISTS checks whether a subquery returns at least one row. It is useful when I only need to know whether related data exists, rather than retrieving the related data itself.
+
+SELECT *
+FROM Employees e
+WHERE EXISTS
+(
+    SELECT 1
+    FROM Departments d
+    WHERE d.DepartmentId = e.DepartmentId
+);
+
+18. Subquery vs JOIN
+A JOIN combines rows from tables, whereas a subquery is a query nested inside another query. I choose between them based on readability, required result, and execution plan. I wouldn't assume one is always faster than the other.
+
+19. What is a CTE?
+CTE stands for Common Table Expression. It is a temporary named result set that exists only for the duration of a single SQL statement. I mainly use CTEs to improve query readability, break complex logic into steps, and handle recursive queries.
+
+WITH EmployeeData AS
+(
+    SELECT *
+    FROM Employees
+    WHERE Salary > 50000
+)
+SELECT *
+FROM EmployeeData;
+
+20. CTE vs Temporary Table
+A CTE is statement-scoped and is mainly useful for structuring a query. A temporary table is stored in tempdb for its scope, can be indexed, and can be useful when I need to reuse intermediate results across multiple statements.
+
+24. ROW_NUMBER vs RANK vs DENSE_RANK
+ROW_NUMBER ===> Gives every row a unique number.
+RANK ==> Same values get the same rank, but gaps are created.
+DENSE_RANK ==> Same values get the same rank without gaps.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Find Second Highest Salary
 ---------------------------
 By Using Max()
