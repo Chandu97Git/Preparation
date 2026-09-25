@@ -1,4 +1,30 @@
-`✅ What is SQL?
+Find Second Highest Salary
+---------------------------
+By Using Max()
+---------------
+select Max(salary) as SecMaxsalary from Employees
+where Salary<(select Max(salary)from Employees)
+
+By Using DENSE_RANK()
+---------------------
+select salary from
+(
+select salary, DENSE_RANK() over (order by salary desc) as SalaryRank
+from Employees 
+)E 
+where SalaryRank=2
+
+Second highest salary in IT, HR, and Finance separately.
+----------------------------------------------------------
+select salary,Country,Department from
+(
+select salary,Country,Department, DENSE_RANK() over
+(partition by Department order by salary desc) as SalaryRank
+from Employees
+)E
+where SalaryRank=2
+
+✅ What is SQL?
 SQL is a standard language used to interact with relational databases. It helps in storing, retrieving, updating, and managing data efficiently
 SQL is used to communicate with databases to perform operations like:Insert data, Retrieve data, Update data, Delete data
 
