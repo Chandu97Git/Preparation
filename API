@@ -69,6 +69,34 @@ Difference Between API and REST API
 | Endpoint?                              | A specific URL where an API can be accessed.                        |
 | JSON?                                  | A lightweight format for exchanging data between client and server. |
 
+How to Add Swagger into the project?
+------------------------------------
+Step 1: Install the required package
+Open your terminal in the ASP.NET Core Web API project and run:
+dotnet add package Swashbuckle.AspNetCore
 
+
+This is the simplest way to get the Swagger generator and Swagger UI together.
+Step 2: Update Program.cs
+Register Swagger services before builder.Build():
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+Then enable Swagger after var app = builder.Build();:
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+
+Keep your existing controller registration, authentication, authorization, and other middleware.
+Step 3: Run and test
+Run your API and open:
+
+https://localhost:<your-port>/swagger
+
+You should see the Swagger UI with your API endpoints.
 
 
