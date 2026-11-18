@@ -1,1 +1,43 @@
+1. Create a new GitHub repository
+New repository settings
+Repository name
 
+WebAPI
+
+Description
+
+ASP.NET Core Web API practice project
+
+Visibility
+Public
+
+- Add README: Unchecked
+- Add .gitignore: None
+- Choose a license: None
+  
+  Repository URL will be
+  
+  https://github.com/Chandu97Git/WebAPI
+
+2. Connect your existing local project
+Once the repository is created, open CMD:
+cd /d D:\UCP\WebAPI
+
+
+Initialize Git:
+git init
+
+Set the branch:
+git branch -M main
+
+Add remote:
+git remote add origin https://github.com/Chandu97Git/WebAPI.git
+
+Add files:
+git add .
+
+Commit:
+git commit -m "Initial commit - WebAPI project"
+
+Push:
+git push -u origin main
